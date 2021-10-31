@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    background:url();
+    height: 100vh;
+  }
+  .bg_image {
+    background-image: url("https://jakrev.com/wp-content/uploads/2020/03/rid_unt_042AR.jpg");
+    min-height: 800px;
+    background-size: cover;
+  }
+  
+  .button-login{
+    height:-2cm;
+    width: 3cm;
+  }
+  
+  .header{
+    height:80px;
+    width:100%;
+    background-color: #A01627;
+  }
+  .center{
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    width: 500px;
+    background:white;
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  }
+  .center h1{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid rgb(172, 170, 170);
+  }
+  .center form{
+    padding:0 40px;
+    box-sizing: border-box;
+  }
+  form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    background: #A01627;
+    margin: 10px 0;
+  }
+  .txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: #A01627;
+    outline: none;
+  }
+  .txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #fa5454;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+  }
+  .txt_field input:focus ~ label,
+  .txt_field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+  }
+  .txt_field input:focus ~ span::before,
+  .txt_field input:valid ~ span::before{
+    width: 100%;
+  }
+  
+  input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+  input[type="submit"]:hover{
+    border-color: #2691d9;
+    transition: .5s;
+  }
+  .signup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+  }
+  .signup_link a{
+    color: #2691d9;
+    text-decoration: none;
+  }
+  .signup_link a:hover{
+    text-decoration: underline;
+  }
+  .form-reset{
+    border:1px solid black;
+    height :200px;
+    width : 500px;
+    margin-left: 30%; 
+    margin-top:8%;
+    border-color: black;
+    border-radius: 10px;
+  }
+  
+  .sub-reset{
+    border:1px solid black;
+    height :40px;
+    width  :175px;
+    background-color:gray;
+    font-size: 13pt;
+    margin-left: 65%; 
+    margin-top:17%;
+  }
+  
+  .isi-form{
+    text-align:left;
+  }
+  
+  .login-form{
+    height:1.25cm;
+    background-color:#A01627;
+    margin-left: -0.16%;
+    margin-top: -3%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  input[type=text],[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=button]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+  }
+  
+  .center h3{
+    text-align: center;
+    padding: 5px 0;
+  }
+  
+  .nav-link:hover{
+    border-color:black;
+  }
+  
+  .p-krrs{
+    font-weight: 600;
+    padding-left:15px;
+  }
+  
+  .krrs{
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .krrs td{
+    padding: 8px;
+    font-weight: 700;
+  }
+  
+  .krrs th{
+    letter-spacing: 4px;
+  }
+  
+  
+  
+  
+  
+  

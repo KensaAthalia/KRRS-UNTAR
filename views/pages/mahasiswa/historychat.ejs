@@ -1,0 +1,63 @@
+<ul class="nav nav-tabs">
+    <li class="nav-items">
+      <a class="nav-link" href="/chatadmin"
+        style="font-weight: 800; color:black; letter-spacing: 3pt; font-size: 8pt;">CHAT ADMIN</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link active" href="/historychat"
+        style="font-weight: 800; color:black; letter-spacing: 3pt; font-size: 8pt;">HISTORY CHAT</a>
+      <div class="nav-bawah"></div>
+    </li>
+  </ul>
+
+  <div class="form-krrs" style="margin-left: 5px; margin-top: 22px;">
+    <div
+      style="width:100% ; height:15px;background-color:black; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+    </div>
+    <div>
+      <form>
+        <table class="krrs" style="text-align:center;margin-top: 40px;margin-left: 10px;width:98%;">
+          <tr style="border-bottom:2px solid black; height:30;width:30;">
+            <th style="letter-spacing:3pt;font-size: 10pt; font-weight: 900;">WAKTU</th>
+            <th style="letter-spacing:3pt;font-size: 10pt; font-weight: 900;">TANGGAL</th>
+            <th style="letter-spacing:3pt; font-size: 10pt; font-weight: 900; margin-right: 10pt;">PERTANYAAN
+            </th>
+            <th style="letter-spacing:3pt; font-size: 10pt; font-weight: 900;">STATUS</th>
+          </tr>
+          <tr style="background-color:CCCCCC;height:40;width:40;border-bottom:1px solid black;">
+            <td>09.29</td>
+            <td>19/07/21</td>
+            <td>Selamat pagi Admin, saya ingin bertanya,
+              <br>
+              untuk FTI jam mengisi KRRS nya itu jam berapa yaa, Min? Terima kasih.</td>
+            <td>
+              <div style="margin: 5pt;"></div>
+              <span class="badge badge-primary"
+                style="background-color: 29CA43;font-size: 13pt;color: white; width:150pt; border-radius: 30px;margin-right: 10pt;">Sudah
+                terjawab</span>
+              <br>
+              <div style="margin: 5pt;"></div>
+
+              <a href="/lihatjawaban" class="btn button-lihatjawaban"
+                style="border-radius: 20pt; width: 150pt; margin-right: 10pt; font-size: 12pt; height:20pt;font-weight: 800; ;">Lihat
+                Jawaban</a>
+              <div style="margin: 5pt;"></div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid black; height:40;width:40;">
+            <td>19.23</td>
+            <td>20/07/21</td>
+            <td>Selamat malam Admin, saya ingin bertanya,
+              <br>
+              untuk FTI angkatan 20, apakah bisa mengambil mata kuliah yang lain?</td>
+            <td><span class="badge badge-primary"
+                style="background-color: A01627;font-size: 13pt;color: white;width:150pt;border-radius: 30px;margin-right: 10pt;">Belum
+                Terjawab</span></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <%- contentFor('title') %>
+  History Chat

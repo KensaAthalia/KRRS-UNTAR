@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengisian KRRS Online</title>
+<style>
+  .form{
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  width: 500px;
+  height:285px;
+  background:white;
+  border-radius: 20px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+</style>
+<link rel="stylesheet" href="Style.css">
+  </head>
+  <body>
+    <div class="bg_image">
+      <div class="header">
+      <img src="asset/untarputih.png" alt="logo" style="width: 50px; margin-left: 8%; margin-top: 10px;">
+        <h1 style="margin-top: -60px; margin-left: 500px; font-size: 30pt; color:white;">Pengisian KRRS Online</h1>
+      </div>
+    </div>
+    <div class="form">
+      <div class="login-form"style="color:white;">
+        <h2 style="margin-left: 15% ; padding-top: 2%;">UNIVERSITAS TARUMANAGARA</h2>
+      </div>
+      <div>
+      <form style="margin-top:5%;margin-left:7%;font-weight: bold; ">
+        <label>Username : </label>
+        <input style="width:70%; margin-left: 20pt; height: 25pt;"type="text" name="username" placeholder="Masukkan username"  >
+        <label>Password : </label>
+        <input style="width:70%; margin-left: 21pt; margin-top: 0pt; height: 25pt;" type="password" name="password" placeholder="Masukkan password">
+        <br>
+        <label>Level Akses :
+        &nbsp&nbsp
+          <select id="level" style="width:70%; height:25pt; border-radius: 5px; border-color: black;">
+            <option value="" disabled selected hidden style="color: gray;">  --- Pilih ---</option>
+            <option value="Mahasiswa">Mahasiswa</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </label>
+      </form>
+      </div>
+        <br>
+        <div class="forgotpass_link"></div>
+        <div class="pass" style="margin-top: 8%;margin-left: 2%;">
+          <a href="Lupapassword.html" style=" color:black; text-decoration: none; font-size: 12pt; margin-left: 10pt;" >Lupa Password ?</a>
+        </div>
+        <div style="margin-left: 65%;margin-top: -50px;">
+          <a id="login" href="#" class="btn" style="background-color: #A01627; color: white; width: 150px;height: 50px; 
+          border-radius: 30px; margin-left: 35%; font-weight: bold;margin-top:2%;font-size: 15pt;text-decoration: none;padding:10px;padding-left: 20px;padding-right: 20px;">Login</a>
+        </div>
+          <br>
+        </div>
+        
+      </form>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $('#level').click((e)=>{
+          var selectLevel=$('#level').val();
+          console.log(selectLevel);
+          if(selectLevel==='Mahasiswa'){
+            $('#login').attr('href', 'home.html');
+          }
+          else if(selectLevel==='Admin'){
+            $('#login').attr('href', 'AdminHome.html');
+          }
+        });
+      </script>
+  </body>
+</html>

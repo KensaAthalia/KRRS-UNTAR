@@ -1,0 +1,173 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahasiswa - <%- title %></title>
+  <style>
+    #content {
+      min-height: calc(100vh - 30px);
+    }
+
+    nav a {
+      text-decoration: none !important;
+      color: white;
+      text-align: justify;
+      margin-left: 9%;
+    }
+
+    .nav_img {
+      width: 30px;
+      height: 30px;
+      float: left;
+    }
+
+    #content .btn {
+      border: 1pt solid gray !important;
+      border-radius: 20px !important;
+      margin: 5px;
+    }
+
+    .card {
+      width: 8rem;
+      height: 12rem;
+      border: 0 !important;
+    }
+
+    .card-title {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+
+    .nav-tabs {
+      border-bottom: 1pt solid black !important;
+      font-size: 14pt;
+      margin-top: 1pt;
+    }
+
+    .nav-bawah {
+      background: black;
+      height: 3px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+  <header class="container-fluid" style="background-color: #7E1724; padding: 10px;">
+    <div class="row">
+      <div class="col">
+        <img src="images/untarputih.png" alt="logo" style="width: 60px; margin-left: 25px; margin-top: 3pt;">
+      </div>
+      <div class="col-9" style="color: white;">
+        <p style="font-weight: bold;font-size: xx-large; margin-top: 10pt;">KRRS ONLINE MAHASISWA</p>
+      </div>
+      <div class="col-2">
+        <a href="/login" id="logout" type="button" class="btn"
+          style="background-color: white; color: #A01627; width: 120px; float: right; border-radius: 30px; margin: 10%;">
+          <img src="images\logout.png" alt="exit" style="float: left; width: 25px; padding: 0;">
+          <div style="font-weight: bold; float: left; margin-left: 5px;">Logout</div>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div id="content">
+    <div class="container-auto">
+      <div class="row">
+        <div class="col-2 pl-4" style="background-color: #A01627; min-height: 100vh;">
+          <div class="container-auto" style="margin-top: 10px;">
+            <img src="images/jennie.png" alt="jennie"
+              style="width: 70px; height: 70px; border-radius: 50%; margin-left: 34%; margin-top: 5%;">
+            <div style="text-align: center; color: white;">
+              <p>
+                JENNIE KIM
+              </p>
+            </div>
+            <div style="text-align: center; color: white; font-size: 8pt; margin-top: -14pt;">
+              <p>
+                Mahasiswa - 535200000
+              </p>
+            </div>
+
+          </div>
+          <nav class="nav flex-column ml-2">
+            <li class="nav-item">
+              <img src="images/HOME WHITE.png" alt="profil" class="nav_img"
+                style="margin-right: 10pt; margin-left: 10pt;">
+              <a class="nav-link active" href="/home" style="font-size: 11pt"> Home</a>
+
+            </li>
+            <li class="nav-item">
+              <img src="images/PROFIL.png" alt="profil" class="nav_img" style="margin-right: 10pt; margin-left: 10pt;">
+              <a class="nav-link" href="/profil" style="font-size: 11pt">Profil</a>
+            </li>
+            <li class="nav-item">
+              <p
+                style="font-size: 6pt;font-weight: bold; float: left; color: white; margin-top: 13px;margin-right: 10pt; margin-left: 10pt;">
+                LINTAR</p>
+              <a class="nav-link" href="/lintar" style="font-size: 11pt">Lintar Mahasiswa</a>
+            </li>
+            <li class="nav-item">
+              <img src="images/STATUS REGISTRASI.png" alt="status" class="nav_img"
+                style="margin-right: 10pt; margin-left: 10pt;">
+              <a class="nav-link" href="/status" style="font-size: 11pt">Status Registrasi</a>
+            </li>
+            <li class="nav-item">
+              <img src="images/PANDUAN KRRS.png" alt="panduan" class="nav_img"
+                style="margin-right: 10pt; margin-left: 10pt;">
+              <a class="nav-link" href="/panduan" style="font-size: 11pt">Panduan KRRS</a>
+            </li>
+            <li class="nav-item">
+              <img src="images/KRRS REGULER.png" alt="krrs" class="nav_img"
+                style="margin-right: 10pt; margin-left: 10pt;">
+              <a class="nav-link" href="/krrs" style="font-size: 11pt">KRRS Reguler</a>
+            </li>
+            <li class="nav-item">
+              <img src="images/PRINT KRRS.png" alt="cetak" class="nav_img"
+                style="margin-right: 10pt; margin-left: 10pt;">
+              <a class="nav-link" href="/cetak" style="font-size: 11pt">Cetak KRRS</a>
+            </li>
+            <li class="nav-item">
+              <i data-feather="phone"
+                style="color: white; width: 30px;float: left; margin-right: 10pt; margin-left: 10pt; margin-top: 5pt;"></i>
+              <a class="nav-link" href="/chatadmin" style="font-size: 11pt">Contact Us</a>
+            </li>
+          </nav>
+        </div>
+        <div class="col">
+          <div class="container-fluid">
+            <!--Ini tempat buat isi pagenya-->
+            <%- body %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer style="background-color: #A01627; color: white; text-align: center; height: 30px;">
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    Copyright UNTAR 2021 All Rights Reserved
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+  </script>
+  <script>
+    feather.replace()
+    $('#logout').click((e) => {
+      title: 'Logout Confirmation';
+      if (confirm("Anda ingin logout?")) {
+        $('#logout').attr('href', '/login');
+      } else {
+        $('#logout').attr('href', '#');
+      }
+    });
+  </script>
+</body>
+
+</html>

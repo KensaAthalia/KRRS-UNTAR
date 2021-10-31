@@ -1,0 +1,223 @@
+<head>
+  <style>
+    #content {
+      min-height: calc(100vh - 30px);
+    }
+
+    nav a {
+      text-decoration: none !important;
+      color: white;
+      text-align: justify;
+      margin-left: 9%;
+    }
+
+    .nav_img {
+      width: 30px;
+      height: 30px;
+      float: left;
+    }
+
+    .form {
+      border: 1px solid black;
+      height: 90%;
+      width: 70%;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      margin-bottom: 10px;
+    }
+
+    .krrs {
+      font-size: 11pt;
+      padding: 5px;
+      width: 80%;
+    }
+
+    .hasilkrrs td,
+    th {
+      font-size: 11pt;
+      border: 0.5px solid black;
+      padding: 5px;
+    }
+
+    .nav-tabs {
+      border-bottom: 1pt solid black !important;
+      font-size: 14pt;
+      text-align: center;
+      margin-top: 5pt;
+    }
+
+    .nav-bawah {
+      background: black;
+      height: 3px;
+    }
+  </style>
+</head>
+<ul class="nav nav-tabs">
+    <li class="nav-items">
+      <a class="nav-link active" href="HistoryChat.html"
+        style="font-weight: 900; color: black;letter-spacing: 3pt; font-size: 8pt;">CETAK KRRS</a>
+      <div class="nav-bawah"></div>
+    </li>
+    <div style="padding-top: 20pt;color: black;"></div>
+  </ul>
+  &nbsp &nbsp &nbsp
+  <div class="col-2">
+    <button id="tombolPrint" type="button" class="btn"
+      style="background-color:  #A01627; color:white; width: 120px; float: right; border-radius: 30px; margin-right: -620pt;">
+      <img src="images/PRINT KRRS.png" alt="Cetak" style="float: left; width: 25px; padding: 0;">
+      <div style="font-weight: bold; float: left; margin-left: 6px;">Cetak</div>
+
+    </button>
+  </div>
+  <div id="print" class="form" style="padding-bottom:10%;">
+    <div class="col">
+      <img src="images/untarmerah.png" alt="logo" style="width: 80px; margin-left: 15%;margin-top: 15px;">
+      <div style="margin-left:11%;margin-top: -10%;text-align: center;font-weight: 900;font-size: 18pt;">
+        UNIVERSITAS TARUMANAGARA
+        <p style="font-weight: 400;font-size: 11pt;text-align: center;">
+          Jl. Letjen S.Parman No.1 Jakarta Barat, 11440
+          <br>
+          www.untar.ac.id
+        </p>
+      </div>
+      <hr style="height:3px;border-width:0;color:gray;background-color:A01627">
+      <p style="font-weight: 600;font-size: 14pt;text-align: center;">
+        KARTU STUDI MAHASISWA SEMENTARA
+        <br>
+        TAHUN AJARAN 2021/2022 SEMESTER GANJIL
+      </p>
+      <div>
+        <table class="krrs" style="margin-left:10%;font-weight: 700;">
+          <tr>
+            <td>NIM </td>
+            <td>: 535200014</td>
+            <td>SKS Kumulatif</td>
+            <td>: 42</td>
+          </tr>
+          <tr>
+            <td>Nama</td>
+            <td>: Jennie Kim</td>
+            <td>IPS TERAKHIR</td>
+            <td>: 36.9</td>
+          </tr>
+          <tr>
+            <td>Beban</td>
+            <td>: 24</td>
+            <td>IPK</td>
+            <td>: 37.9</td>
+          </tr>
+        </table>
+        <div>
+          <form>
+            <table class="hasilkrrs" style="text-align:center;margin-top: 20px;width:100%;">
+              <tr>
+                <th>Kode</th>
+                <th>Matkul</th>
+                <th>SKS</th>
+                <th>Kelas</th>
+                <th>Ruang</th>
+                <th>Waktu kuliah</th>
+              </tr>
+              <tr style="background-color:CCCCCC;">
+                <td>TK23015</td>
+                <td>WEB PROGRAMMING</td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">8</span></td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">A</span></td>
+                <td>
+                  <p>Ruang Lab Prog. 5</p>
+                  <p>Ruang R.703</p>
+                </td>
+                <td>
+                  <p>Senin, 07:30 s.d 09:10</p>
+                  <p>Senin, 09:30 s.d 11:10</p>
+                  <p>Selasa, 07:30 s.d 11:10</p>
+                </td>
+              </tr>
+              <tr>
+                <td>TK23016</td>
+                <td>COMPUTER SYSTEMS</td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">6</span></td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">B</span></td>
+                <td>
+                  <p>Ruang R.803</p>
+                  <p>Ruang R.803</p>
+                </td>
+                <td>
+                  <p>Selasa, 07:30 s.d 09:10</p>
+                  <p>Selasa, 09:30 s.d 11:10</p>
+                </td>
+              </tr>
+              <tr style="background-color:CCCCCC;">
+                <td>TK23017</td>
+                <td>INTRODUCTION TO OPERATING SYSTEMS</td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">4</span></td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">A</span></td>
+                <td>
+                  <p>Ruang R.705</p>
+                  <p>Ruang R.705</p>
+                </td>
+                <td>
+                  <p>Kamis, 07:30 s.d 09:10</p>
+                  <p>Kamis, 09:30 s.d 11:10</p>
+                </td>
+              </tr>
+              <tr>
+                <td>TK33010</td>
+                <td>DISTRIBUTED SYSTEMS</td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">4</span></td>
+                <td><span class="badge badge-pill"
+                    style="background-color: black;font-size: 12pt;color: white;">A</span></td>
+                <td>
+                  <p>Ruang R.805</p>
+                  <p>Ruang R.805</p>
+                </td>
+                <td>
+                  <p>Rabu, 07:30 s.d 09:10</p>
+                  <p>Rabu, 09:30 s.d 11:10</p>
+                </td>
+              </tr>
+              <tr style="font-size: 18pt; font-weight: 500;">
+                <td></td>
+                <td>Total SKS</td>
+                <td><span class="badge badge-pill"
+                    style="background-color:black;font-size: 12pt;color: white;">22</span></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <div style="text-align: left;margin-top:5%;margin-left: 75%;">
+          <p>Cetakan Perubahan ke-1
+            <br>
+            Jakarta, 20 Juli 2021
+            <br>
+          </p>
+          <p style="font-weight: 800;">
+            BIRO ADAK
+          </p>
+        </div>
+        <p style="text-align: center;margin-top: 5%;">------------- Sobek Disini --------------</p>
+        <div style="margin-left: 2%;">
+          <p style="font-weight: 800;">PERHATIAN</p>
+          <ul>
+            <li style="font-weight: 500;">Nomor Registrasi Anda adalah</li>
+            <p style="font-weight: 800;">535200014020202</p>
+            <li style="font-weight: 500;">Harap catat dan ingat nomor ini dan jangan diperlihatkan ke orang
+              lain
+              <br>
+              KSS ini sebagai bukti pengambilan KSM (Kartu Studi Mahasiswa)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- contentFor('title') %>
+  Cetak

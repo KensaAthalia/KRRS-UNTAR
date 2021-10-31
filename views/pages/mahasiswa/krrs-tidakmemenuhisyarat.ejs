@@ -1,0 +1,70 @@
+<ul class="nav nav-tabs">
+    <li class="nav-items">
+      <a class="nav-link active" href="/krrs"
+        style="font-weight: 800; color: black; letter-spacing: 3pt; font-size: 8pt;">TAHAP 1 <br>(Masuk)</a>
+
+    </li>
+    <li class="nav-items" style="margin-left: 5%;border-color: black;">
+      <a class="nav-link" href="/krrs-pengisian"
+        style="font-weight: 800; color: black;letter-spacing: 3pt; font-size: 8pt;">TAHAP 2
+        <br>(Pengisian)</a>
+      <div class="nav-bawah"></div>
+    </li>
+    <li class="nav-items" style="margin-left: 5%;">
+      <a class="nav-link" href="/krrs-reguler"
+        style="font-weight: 800; color: black; letter-spacing: 3pt; font-size: 8pt;">TAHAP 3 <br>(Selesai)</a>
+    </li>
+  </ul>
+
+  <h2 style="text-align: center;color: #A01627; font-weight: 800;margin: 5%;">Maaf, Anda tidak memenuhi
+    prasyarat mengambil matakuliah ini!</h3>
+
+    <div class="form-krrs" style="margin-left: 5px; margin-top: 20px;">
+      <div
+        style="width:100.1% ; height:15px;background-color:black; border-top-left-radius: 5px;border-top-right-radius: 5px;">
+      </div>
+      <div>
+        <div>
+          <form>
+            <table class="krrs"
+              style="text-align:center;margin-top: 20px;border-collapse: collapse;border:1px solid black;margin-left:10px;margin-right:10px;width:98%;">
+              <tr style="background-color:CCCCCC;">
+                <th>NO</th>
+                <th>Kode</th>
+                <th>Matkul</th>
+                <th>SKS</th>
+                <th colspan="4">Prasyarat</th>
+                <th>SKS</th>
+                <th>IPK</th>
+              </tr>
+              <tr>
+                <td rowspan="2">1</td>
+                <td rowspan="2">TK23015</td>
+                <td rowspan="2">WEB PROGRAMMING</td>
+                <td rowspan="2"><span class="badge badge-pill"
+                    style="background-color: 811EAF;font-size: 12pt;color: white;">A</span></td>
+                <th>Kode MK</th>
+                <th>Nama MK</th>
+                <th>Nilai syarat</th>
+                <th>Nilai anda</th>
+                <td rowspan="2">130</td>
+                <td rowspan="2">0</td>
+              </tr>
+              <tr>
+                <td>TK23015</td>
+                <td>WEB PROGRAMMING -2Sks</td>
+                <td>130</td>
+                <td>-</td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="container-fluid" style="font-weight: bold; margin-bottom: 20px; margin-top: 5%;">
+      <a href="/krrs-pengisian" class="btn" style="background-color: #A01627; color: white; width: 50%;height: 40px; 
+          border-radius: 30px; margin-left: 25%; font-weight: bold;">Kembali ke halaman pengisian</a>
+    </div>
+<%- contentFor('title') %>
+KRRS Tidak Memenuhi Syarat

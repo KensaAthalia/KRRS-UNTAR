@@ -1,0 +1,34 @@
+<ul class="nav nav-tabs">
+    <li class="nav-items">
+      <a class="nav-link" href="/profil"
+        style="font-weight: 800;color:black; letter-spacing: 3pt; font-size: 8pt;">BIODATA</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link active" href="/gantipass"
+        style="font-weight: 800;color:black;letter-spacing: 3pt; font-size: 8pt;">GANTI PASSWORD</a>
+      <div class="nav-bawah"></div>
+    </li>
+  </ul>
+  <div class="container-auto" style="border: 1pt solid black;margin: auto; margin-top: 8%;
+    width: 50%; height: 55%;border-radius: 10px;">
+    <div style="border-bottom: 1pt solid gray; margin-top: 20px;">
+      <div class="isi-form" style="margin: 20px;">
+        <input class="pass" type="password" placeholder="Current Password" id="currPass" name="currPass">
+        <a href="lupapassword.html" style="color: #A01627;">Lupa Password?</a>
+      </div>
+    </div>
+    <div>
+      <div class="isi-form" style="margin: 20px;">
+        <input class="pass" type="password" placeholder="New Password" id="newPass" name="newPass">
+        <br><br>
+        <input class="pass" type="password" placeholder="Confirm Password" id="conPass" name="conPass">
+        <a href="/gantipassword" id="Simpan">
+          <button class="btn"
+            style="background-color:#A01627; color:white; font-size: 15pt; width:150px; font-weight: bold; border-radius: 30px;margin-left: 35%; margin-top: 10%;">Simpan</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <%- contentFor('title') %>
+  Ganti Password

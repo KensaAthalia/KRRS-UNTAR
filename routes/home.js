@@ -11,7 +11,20 @@ router.get('/home',(req,res) =>{
 })
 
 router.get('/login',(req,res) =>{
-    res.render('pages/login');
+    res.render('pages/login',{layout:false});
+})
+
+router.get('/lupapass',(req,res) =>{
+    res.render('pages/lupapass',{layout:false});
+})
+router.get('/lupapass2',(req,res) =>{
+    res.render('pages/lupapass2',{layout:false});
+})
+router.get('/lupapass3',(req,res) =>{
+    res.render('pages/lupapass3',{layout:false});
+})
+router.get('/lupapass4',(req,res) =>{
+    res.render('pages/lupapass4',{layout:false});
 })
 
 router.get('/profil',(req,res) =>{

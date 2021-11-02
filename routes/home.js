@@ -78,4 +78,9 @@ router.get('/gantipass',(req,res) =>{
     res.render('pages/mahasiswa/gantipass');
 })
 
+router.get('/adminHome',(req,res) =>{
+    //check user session
+    res.render('pages/admin/adminHome',{layout:'layouts/admin'});
+})
+
 module.exports = router;

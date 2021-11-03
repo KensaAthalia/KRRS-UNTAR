@@ -1,0 +1,94 @@
+<head>
+    <style>
+    .form-pertanyaanmahasiswa {
+      border: 1px solid black;
+      height: 400px;
+      width: 98%;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+
+    .nav-bawah {
+      background: black;
+      height: 3px;
+    }
+
+    td {
+      font-weight: 600;
+    }
+
+    th {
+      font-weight: 700;
+    }
+    </style>
+</head>
+<ul class="nav nav-tabs" style="font-size: 12pt;">
+    <li class="nav-items">
+        <a class="nav-link active" href="/pertanyaanmahasiswa"
+            style="font-weight:800; letter-spacing: 3pt; font-size: 8pt; color: black;">PERTANYAAN MAHASISWA</a>
+        <div class="nav-bawah"></div>
+    </li>
+
+</ul>
+
+</div>
+<div class="form-pertanyaanmahasiswa" style="margin-left: 5px; margin-top: 20px;">
+    <div
+        style="width:100.1% ; height:15px;background-color:black; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+    </div>
+    <div>
+        <form>
+            <table style="text-align:center;margin-top: 20px;padding: auto;margin: 10px;">
+                <tr style="border-bottom:2px solid black;letter-spacing: 3pt;">
+                    <th scope="col" style="text-align: center;width:3%">WAKTU</th>
+                    <th scope="col" style="text-align: center;width:3%">TANGGAL</th>
+                    <th scope="col" style="text-align: center;width:10%">NAMA</th>
+                    <th scope="col" style="text-align: center;width:25%">PERTANYAAN</th>
+                    <th scope="col" style="text-align: center;width:5%">STATUS</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+                        <th scope="row">09.29</th>
+                        <td>19/07/21</td>
+                        <td>JENNIE</td>
+                        <td>Selamat pagi Admin, saya ingin bertanya, untuk FTI jam mengisi KRRS nya itu jam berapa yaa,
+                            Min?
+                            Terima kasih.</td>
+                        <td>
+                            <button type="button" class="btn btn-success"
+                                style="border-radius: 20pt; width: 105pt;">Sudah
+                                Terjawab</button>
+                            <a href="/Pertanyaanmahasiswalihatjwbn" type="button" class="btn btn-primary"
+                                style="border-radius: 20pt; width: 95pt;">Lihat Jawaban</a>
+                        </td>
+                    </tr>
+                    <tr style="border-bottom:1px solid black;">
+                        <th scope="row">19.23</th>
+                        <td>20/07/21</td>
+                        <td>JENNIE</td>
+                        <td>Selamat malam Admin, saya ingin bertanya, untuk FTI angkatan 20, apakah bisa mengambil mata
+                            kuliah
+                            yang
+                            lain?</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" style="border-radius: 20pt; width:105pt;">Sudah
+                                Terjawab</button>
+                            <button type="button" class="btn btn-warning" style="border-radius: 20pt; width: 95pt;">
+                                Jawab</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+
+
+    </div>
+</div>
+<%- contentFor('title') %>
+Pertanyaan Mahasiswa

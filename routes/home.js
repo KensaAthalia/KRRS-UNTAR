@@ -82,5 +82,31 @@ router.get('/adminHome',(req,res) =>{
     //check user session
     res.render('pages/admin/adminHome',{layout:'layouts/admin'});
 })
+router.get('/krrsmasuk',(req,res) =>{
+    res.render('pages/admin/krrsmasuk',{layout:'layouts/admin'});
+})
+router.get('/pertanyaanmahasiswa',(req,res) =>{
+    res.render('pages/admin/pertanyaanmahasiswa',{layout:'layouts/admin'});
+})
+
+router.get('/DataMatkul',(req,res) =>{
+    res.render('pages/admin/DataMatkul',{layout:'layouts/admin'});
+})
+
+router.get('/DataDosen',(req,res) =>{
+    res.render('pages/admin/DataDosen',{layout:'layouts/admin'});
+})
+
+router.get('/DataMahasiswa',(req,res) =>{
+    res.render('pages/admin/DataMahasiswa',{layout:'layouts/admin'});
+})
+
+router.get('/DataKHS',(req,res) =>{
+    res.render('pages/admin/DataKHS',{layout:'layouts/admin'});
+})
+
+router.get('/DataKRS',(req,res) =>{
+    res.render('pages/admin/DataKRS',{layout:'layouts/admin'});
+})
 
 module.exports = router;

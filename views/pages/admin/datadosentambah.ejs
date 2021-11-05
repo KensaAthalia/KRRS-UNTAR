@@ -1,0 +1,190 @@
+<head>
+    <style>
+        .form-dosentambahfix {
+      border: 1px solid black;
+      max-height: 600px;
+      width: 98%;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+
+    .form-dosentambah input {
+      border-radius: 5px;
+    }
+
+    .form-dosentambah th,
+    td,
+    tr {
+      padding: 5px;
+    }
+
+    .form-dosentambahfix th,
+    td,
+    tr {
+      padding: 12px;
+    }
+
+    tr,
+    td {
+      font-weight: 600;
+    }
+    </style>
+</head>
+
+<ul class="nav nav-tabs" style="font-size: 12pt;">
+    <li class="nav-items">
+      <a class="nav-link" href="/DataMatkul"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">MATA KULIAH</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link active" href="/DataDosen"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">DATA DOSEN</a>
+      <div class="nav-bawah"></div>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataMahasiswa"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA MAHASISWA</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataKHS"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KHS</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataKRS"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KRS</a>
+    </li>
+  </ul>
+  <div style="font-weight: 900; margin-left: 10px;font-size: 20pt; margin-top: 10px; width:50%;">Data Dosen
+  </div>
+</div>
+
+<div class="form-dosentambah" style="margin-left: 5px; margin-top: 15px;">
+  <div style="width:100.1% ; height:30px;background-color:black; border-top-left-radius: 10px;
+          border-top-right-radius: 10px;"></div>
+  <div>
+    <form>
+      <table class="dosentambah" style="text-align:center;margin: 20px;padding: auto;">
+        <tr style="border-bottom:1px solid black;letter-spacing: 3pt;">
+          <th scope="col" style="text-align: center;width:3%">NO</th>
+          <th scope="col" style="text-align: center;width:12%">NIP</th>
+          <th scope="col" style="text-align: center;width:25%">NAMA DOSEN</th>
+          <th scope="col" style="text-align: center;width:18%">PRODI</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black">
+            <th scope="row">1</th>
+            <td><input type="number" id="NIP"></td>
+            <td><input type="namadosen" id="namadosen"></td>
+            <td><input type="prodi" id="prodi"></td>
+
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">2</th>
+            <td><input type="number" id="NIP"></td>
+            <td><input type="namadosen" id="namadosen"></td>
+            <td><input type="prodi" id="prodi"></td>
+          </tr>
+
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black">
+            <th scope="row">3</th>
+            <td><input type="number" id="NIP"></td>
+            <td><input type="namadosen" id="namadosen"></td>
+            <td><input type="prodi" id="prodi"></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div>
+        <button type="button" class="btn btn-success"
+          style="border-radius: 20pt; width: 70pt;margin-left: 38%;margin-top: 25px;">Save</button>
+        <button type="button" class="btn btn-danger"
+          style="border-radius: 20pt; width: 70pt;margin-top: 25px;">Batal</button>
+        <a href="/DataDosen" type="button" class="btn btn-primary"
+          style="border-radius: 20pt; width: 70pt;margin-top: 25px;">Tutup</a>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="form-dosentambahfix" style="margin-left: 4px; margin-top:30px;margin-bottom:30px;">
+  <div style="width:100% ; height:15px;background-color:black; border-top-left-radius: 10px;
+          border-top-right-radius: 10px;"></div>
+  <div>
+    <form>
+      <table class="dosentambahfix" style="text-align:center;margin: 20px;margin-top:5px;padding: auto;">
+        <tr style="border-bottom:1px solid black;letter-spacing: 3pt;">
+          <th scope="col" style="text-align: center;width:3%">NO</th>
+          <th scope="col" style="text-align: center;width:3%">NIP</th>
+          <th scope="col" style="text-align: center;width:5%">NAMA DOSEN</th>
+          <th scope="col" style="text-align: center;width:5%">PRODI</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">1</th>
+            <td>10393012</td>
+            <td>CHAIRISNI LUBIS,Dra.,M.Kom.</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">2</th>
+            <td>10812001</td>
+            <td>JANSON HENDRYLI,S.Kom,M.Kom.</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">3</th>
+            <td>10805002</td>
+            <td>VINY CHRISTANTI MAWARDI,S.Kom.</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">4</th>
+            <td>10396060</td>
+            <td>BAGUS MULYAWAN,S.Kom,MM</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">5</th>
+            <td>10189013</td>
+            <td>DYAH ERNY HERWINDIATI,Dr.,Ir,M.si</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">6</th>
+            <td>10301014</td>
+            <td>LINA,ST.,M.Kom.</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">7</th>
+            <td>10390001</td>
+            <td>JEANNY PRAGANTHA,Ir.,M.Eng</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">8</th>
+            <td>10805001</td>
+            <td>DESI ARISANDI,S.Kom.</td>
+            <td>TEKNIK INFORMATIKA</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+
+<%- contentFor('title') %>
+Data Dosen Tambah

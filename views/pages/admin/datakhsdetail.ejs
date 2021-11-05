@@ -1,0 +1,143 @@
+<head>
+    <style>
+    .form-datakhsedit {
+      border: 1px solid black;
+      max-height: 100%;
+      width: 100%;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+    </style>
+</head>
+
+<ul class="nav nav-tabs" style="font-size: 12pt;">
+    <li class="nav-items">
+      <a class="nav-link" href="/DataMatkul"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">MATA KULIAH</a>
+
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataDosen"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">DATA DOSEN</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataMahasiswa"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA MAHASISWA</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link active" href="/DataKHS"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KHS</a>
+      <div class="nav-bawah"></div>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataKRS"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KRS</a>
+    </li>
+  </ul>
+  <div style="font-weight: 900; margin-left: 10px;font-size: 20pt; margin-top: 10px; width:50%;">DATA NILAI
+  </div>
+  <div>
+    <div
+      style="text-align: left;color: #000000; font-weight: bold;margin-left:5px;margin-top: 10px;font-weight: 700;">
+      Show
+      <select class="form-select form-select-lg mb-3" style="width:5%; border-color:black;">
+        <option selected>10</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+      </select>
+      entries
+    </div>
+  </div>
+  <div class="form-datakhsedit" style="margin-left: 5px; margin-top: 10px;">
+    <div style="width:100.1% ; height:15px;background-color:black; border-top-left-radius: 10px;
+              border-top-right-radius: 10px;"></div>
+    <div>
+      </form>
+      <table class="datakhsedit" style="text-align:center;margin: 20px;padding: auto;">
+        <tr style="border-bottom:1px solid black;letter-spacing: 3pt;">
+          <th scope="col" style="text-align: center;width:3%">NO</th>
+          <th scope="col" style="text-align: center;width:3%">NIM</th>
+          <th scope="col" style="text-align: center;width:15%">NAMA MAHASISWA</th>
+          <th scope="col" style="text-align: center;width:8%">KELAS</th>
+          <th scope="col" style="text-align: center;width:9%">ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black">
+            <th scope="row">1</th>
+            <td>535200001</td>
+            <td>DAMEETHIA ANGELINE</td>
+            <td>A</td>
+            <td>
+              <a href="/khsinput" type="button" class="btn btn-success"
+                style="border-radius: 20pt; width: 60pt;">Input</a>
+            </td>
+
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">2</th>
+            <td>535200006</td>
+            <td>VENNY CYNTIA</td>
+            <td>A</td>
+            <td>
+              <a href="/khsinput" type="button" class="btn btn-success"
+                style="border-radius: 20pt; width: 60pt;">Input</a>
+          </tr>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black">
+            <th scope="row">3</th>
+            <td>535200014</td>
+            <td>KENSA ATHALIA</td>
+            <td>A</td>
+            <td>
+              <a href="/khsinput" type="button" class="btn btn-success"
+                style="border-radius: 20pt; width: 60pt;">Input</a>
+            </td>
+
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">4</th>
+            <td>535200019</td>
+            <td>JAMES SUGIARTO EFFENDY</td>
+            <td>A</td>
+            <td>
+              <a href="/khsinput" type="button" class="btn btn-success"
+                style="border-radius: 20pt; width: 60pt;">Input</a>
+            </td>
+
+          </tr>
+
+
+
+        </tbody>
+      </table>
+      <h6 style="text-align: left;color: #000000; font-weight: bold;padding-left:10px;">Showing 1 to 4 of 4
+        entries</h6>
+      <nav aria-label="Page navigation krs">
+        <div style="padding-right: 1%;">
+          <ul class="pagination justify-content-end">
+            <li class="page-item disabled">
+              <a class="page-link" style="color:black;" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" style="background-color: #A01627;color:white;"
+                href="#">1</a></li>
+            <li class="page-item">
+              <a class="page-link" style="color:black;" href="#">Next</a>
+            </li>
+          </ul>
+      </nav>
+
+      </form>
+
+
+
+    </div>
+  </div>
+</div>
+<%- contentFor('title') %>
+Data KHS Detail

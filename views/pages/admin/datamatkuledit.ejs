@@ -1,0 +1,97 @@
+<head>
+  <style>
+    .form-matkuledit {
+      border: 1px solid black;
+      max-height: 100%;
+      width: 98%;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+
+    .form-matkulfix {
+      border: 1px solid black;
+      height: 600;
+      width: 98%;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+
+    .form-matkulfix th,
+    td,
+    tr {
+      padding: 8px;
+    }
+
+    tr,
+    td {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<ul class="nav nav-tabs" style="font-size: 12pt;">
+    <li class="nav-items">
+      <a class="nav-link active" href="/DataMatkul"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">MATA KULIAH</a>
+      <div class="nav-bawah"></div>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataDosen"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">DATA DOSEN</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataMahasiswa"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA MAHASISWA</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataKHS"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KHS</a>
+    </li>
+    <li class="nav-items">
+      <a class="nav-link" href="/DataKRS"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KRS</a>
+    </li>
+  </ul>
+  <div style="font-weight: 900; margin-left: 10px;font-size: 20pt; margin-top: 10px; width:50%;"> Edit Mata Kuliah
+  </div>
+</div>
+
+<div class="mb-3">
+  <label for="Kode" class="form-label" style="font-size: 12pt;font-weight: 900;">Kode</label>
+  <input type="Kode" class="form-control" id="Kode" style="margin-top:-9pt;"></div>
+<div class="mb-3">
+  <label for="Prodi" class="form-label" style="font-size: 12pt;font-weight: 900;"> Prodi</label>
+  <input type="Prodi" class="form-control" id="Prodi" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="  matakuliah" class="form-label" style="font-size: 12pt;font-weight: 900;">Mata Kuliah</label>
+  <input type="matakuliah" class="form-control" id="matakuliah" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="SKS" class="form-label" style="font-size: 12pt;font-weight: 900;">SKS</label>
+  <div class="badge"
+    style="border-radius: 30px;margin-right:50%; width: 35%;height:40%;font-size:12pt;color: white;"></div>
+  <input type="number" class="form-control" id="SKS" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="  Semester" class="form-label" style="font-size: 12pt;font-weight: 900;">Semester</label>
+  <input type="number" class="form-control" id="Semester" style="margin-top: -8pt;">
+</div>
+
+<div>
+  <button type="button" class="btn btn-success"
+    style="border-radius: 20pt; width: 70pt;margin-left: 38%;">Save</button>
+  <button type="button" class="btn btn-danger" style="border-radius: 20pt; width: 70pt;">Batal</button>
+  <a href="/DataMatkul" type="button" class="btn btn-primary"
+    style="border-radius: 20pt; width: 70pt;">Tutup</a>
+</div>
+
+<%- contentFor('title') %>
+Data Matkul Edit

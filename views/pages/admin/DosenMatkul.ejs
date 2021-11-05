@@ -1,0 +1,288 @@
+<head>
+    <style>
+    .form-matkuldosen {
+      border: 1px solid black;
+      height: 200px;
+      width: 100%;
+      margin-left: 8px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+
+    .form-matakuliah {
+      border: 1px solid black;
+      height: 600px;
+      width: 195%;
+      margin-left: 8px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+
+    table form-matakuliah th,
+    td,
+    tr {
+      padding: 6px;
+    }
+
+    tr,
+    td {
+      font-weight: 600;
+    }
+    </style>
+</head>
+
+<ul class="nav nav-tabs">
+    <div style="font-weight: 900; margin-left: 10px;font-size: 20pt; margin-top: 6px; width:50%;"> Data Matakuliah
+      Dosen
+  </ul>
+  <div class="form-matkuldosen" style="margin-left: 4px; margin-top:10px;margin-bottom:4px;">
+    <div style="width:100% ; height:30px;background-color:black; border-top-left-radius: 10px;
+          border-top-right-radius: 10px;"></div>
+    <div>
+      </form>
+      <table class="matkuldosen" style="text-align:center;margin-top: 20px;margin-bottom:-1px;margin:10px;">
+        <tr style="border-bottom:1px solid black;letter-spacing: 3px;">
+          <th scope="col" style="text-align: center;width:3%">NO</th>
+          <th scope="col" style="text-align: center;width:3%">KODE MK</th>
+          <th scope="col" style="text-align: center;width:8%">MATA KULIAH</th>
+          <th scope="col" style="text-align: center;width:5%">OPTION</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">1</th>
+            <td>TK23016</td>
+            <td>COMPUTER SYSTEMS</td>
+            <td>
+              <button type="button" class="btn btn-danger"
+                style="border-radius: 20pt; width: 85pt;height: 25pt;">Hapus</button>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">2</th>
+            <td>TK23017</td>
+            <td>INTRODUCTION TO OPERATING SYSTEMSS</td>
+            <td>
+              <button type="button" class="btn btn-danger"
+                style="border-radius: 20pt; width: 85pt;height: 25pt;">Hapus</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  &nbsp &nbsp &nbsp &nbsp
+  <fieldset disabled>
+    <div class="mb-3">
+      <label for="NIP" class="form-label">NIP</label>
+      <input type="text" id="disabledNIPInput" class="form-control" placeholder=""
+        style="border-color:#000000;border-radius:3px">
+    </div>
+    <div class="mb-3">
+      <label for="NAMA" class="form-label" style="text-align:left">NAMA</label>
+      <input type="text" id="disabledNamaInput" class="form-control" placeholder=""
+        style="border-color:#000000;border-radius:3px">
+    </div>
+  </fieldset>
+  </form>
+</div>
+<div style="font-weight: 900; margin-left: 4px;font-size: 12pt; margin-top: 10px; width:50%;margin-bottom: 8%;">
+  Mata Kuliah
+  <div class="form-matakuliah" style="margin-left: 5px; margin-top:8px;margin-bottom: 10px;margin-right: 5px;">
+    <div style="width:100% ; height:15px;background-color:black; border-top-left-radius: 10px;
+            border-top-right-radius: 10px;"></div>
+    <div>
+      </form>
+      <table class="matakuliah" style="text-align:center;margin-top:12px;padding: auto;margin:10px;">
+        <tr style="border-bottom:1px solid black;letter-spacing: 3px;">
+          <th scope="col" style="text-align: center;width:3%">NO</th>
+          <th scope="col" style="text-align: center;width:5%">KODE</th>
+          <th scope="col" style="text-align: center;width:15%">MATA KULIAH</th>
+          <th scope="col" style="text-align: center;width:5%">SKS</th>
+          <th scope="col" style="text-align: center;width:5%">OPSI</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">1</th>
+            <td>TK23015</td>
+            <td>WEB PROGRAMMING</td>
+            <td>
+              <div class="badge badge-danger"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                8</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">2</th>
+            <td>TK23016</td>
+            <td>COMPUTER SYSTEMS</td>
+            <td>
+              <div class="badge badge-primary"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                6</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+
+          </tr>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">3</th>
+            <td>TK23017</td>
+            <td>INTRODUCTION TO OPERATING SYSTEMS</td>
+            <td>
+              <div class="badge badge-success"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                4</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">4</th>
+            <td>TK33010</td>
+            <td>DISTRIBUTED SYSTEMS</td>
+            <td>
+              <div class="badge badge-success"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                4</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">5</th>
+            <td>TK13019</td>
+            <td>COMPUTATION I</td>
+            <td>
+              <div class="badge badge-success"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                4</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">6</th>
+            <td>TK33010</td>
+            <td>INTRODUCTION TO ALGORITHMS</td>
+            <td>
+              <div class="badge badge-danger"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                8</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">7</th>
+            <td>TK13021</td>
+            <td>DATABASE SYSTEMS</td>
+            <td>
+              <div class="badge badge-success"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                4</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">8</th>
+            <td>TK33010</td>
+            <td>IT TRENDS</td>
+            <td>
+              <div class="badge badge-success"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                4</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+            <th scope="row">9</th>
+            <td>TK13023</td>
+            <td>COMPUTATION II</td>
+            <td>
+              <div class="badge badge-danger"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                8</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+          <tr style="border-bottom:1px solid black;">
+            <th scope="row">10</th>
+            <td>TK13024</td>
+            <td>DATA STRUCTURES</td>
+            <td>
+              <div class="badge badge-primary"
+                style="border-radius: 30px; width: 30%;height:35px;font-size:12pt;padding-top: 8px;color: white;">
+                6</div>
+            </td>
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked style="width: 20px; 
+                    height: 20px;margin-top:-5%;">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <button type="button" class="btn btn-success"
+          style="border-radius: 20pt; width: 70pt;margin-left: 38%;">Save</button>
+        <button type="button" class="btn btn-danger" style="border-radius: 20pt; width: 70pt;">Batal</button>
+        <a href="/DataDosen" type="button" class="btn btn-primary"
+          style="border-radius: 20pt; width: 70pt;">Tutup</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- contentFor('title') %>
+Dosen Matkul

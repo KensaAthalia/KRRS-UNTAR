@@ -2,6 +2,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session')
 const layouts = require('express-ejs-layouts')
+const mongoose = require('mongoose')
+
+mongoose.connect(('mongodb+srv://admin:UNTAR2020@cluster0.nu6km.mongodb.net/KRRS?retryWrites=true&w=majority')
+,(err,res) => {
+    if(err){
+        console.error(err);
+    }
+    else{
+        console.log('Database Terhubung');
+    }
+})
 
 const app = express()
 app.set('view engine','ejs');

@@ -23,15 +23,25 @@ app.use(layouts);
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
 
+app.use(session ({
+    secret: 'som3_secre3t_keys',
+    cookie: {}    
+}))
+
+app.use((req, res, next) => {
+    res.locals.isLoggedIn = req.session.isLoggedIn;
+    next();
+})
+
 //routes
 const homeRoute = require('./routes/home')
 app.use('/',homeRoute)
 
 const adminRoute = require('./routes/admin')
-app.use('/',adminRoute)
+app.use('/admin',adminRoute)
 
 const authRoute = require('./routes/auth')
-app.use('/login',authRoute)
+app.use('/auth',authRoute)
 
 app.get('/',(req,res)=>{
     res.send('Hello World')

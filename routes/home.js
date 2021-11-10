@@ -3,7 +3,13 @@ const router = express.Router()
 
 router.get('/',(req,res) =>{
     //check user session
-    res.render('pages/login',{layout:false});
+    const isNotLoggedIn = !req.session.user;
+    if(isNotLoggedIn){
+        res.redirect('/login');
+    }
+    else{
+        res.render('pages/home');
+    }
 })
 
 router.get('/home',(req,res) =>{
@@ -78,86 +84,6 @@ router.get('/gantipass',(req,res) =>{
     res.render('pages/mahasiswa/gantipass');
 })
 
-router.get('/adminHome',(req,res) =>{
-    //check user session
-    res.render('pages/admin/adminHome',{layout:'layouts/admin'});
-})
-router.get('/krrsmasuk',(req,res) =>{
-    res.render('pages/admin/krrsmasuk',{layout:'layouts/admin'});
-})
-router.get('/masukdetail',(req,res) =>{
-    res.render('pages/admin/masukdetail',{layout:'layouts/admin'});
-})
-router.get('/masukdetaildetail',(req,res) =>{
-    res.render('pages/admin/masukdetaildetail',{layout:'layouts/admin'});
-})
 
-router.get('/pertanyaanmahasiswa',(req,res) =>{
-    res.render('pages/admin/pertanyaanmahasiswa',{layout:'layouts/admin'});
-})
-router.get('/Pertanyaanmahasiswalihatjwbn',(req,res) =>{
-    res.render('pages/admin/Pertanyaanmahasiswalihatjwbn',{layout:'layouts/admin'});
-})
-router.get('/mahasiswabelumterjawab',(req,res) =>{
-    res.render('pages/admin/mahasiswabelumterjawab',{layout:'layouts/admin'});
-})
-
-router.get('/DataMatkul',(req,res) =>{
-    res.render('pages/admin/DataMatkul',{layout:'layouts/admin'});
-})
-
-router.get('/datamatkuledit',(req,res) =>{
-    res.render('pages/admin/datamatkuledit',{layout:'layouts/admin'});
-})
-
-router.get('/Matkultambah',(req,res) =>{
-    res.render('pages/admin/Matkultambah',{layout:'layouts/admin'});
-})
-
-router.get('/DataDosen',(req,res) =>{
-    res.render('pages/admin/DataDosen',{layout:'layouts/admin'});
-})
-
-router.get('/datadosentambah',(req,res) =>{
-    res.render('pages/admin/datadosentambah',{layout:'layouts/admin'});
-})
-
-router.get('/datadosenedit',(req,res) =>{
-    res.render('pages/admin/datadosenedit',{layout:'layouts/admin'});
-})
-
-router.get('/DosenMatkul',(req,res) =>{
-    res.render('pages/admin/DosenMatkul',{layout:'layouts/admin'});
-})
-
-router.get('/DataMahasiswa',(req,res) =>{
-    res.render('pages/admin/DataMahasiswa',{layout:'layouts/admin'});
-})
-router.get('/datamahasiswatambah',(req,res) =>{
-    res.render('pages/admin/datamahasiswatambah',{layout:'layouts/admin'});
-})
-router.get('/datamahasiswaedit',(req,res) =>{
-    res.render('pages/admin/datamahasiswaedit',{layout:'layouts/admin'});
-})
-
-router.get('/DataKHS',(req,res) =>{
-    res.render('pages/admin/DataKHS',{layout:'layouts/admin'});
-})
-router.get('/datakhsdetail',(req,res) =>{
-    res.render('pages/admin/datakhsdetail',{layout:'layouts/admin'});
-})
-router.get('/khsinput',(req,res) =>{
-    res.render('pages/admin/khsinput',{layout:'layouts/admin'});
-})
-
-router.get('/DataKRS',(req,res) =>{
-    res.render('pages/admin/DataKRS',{layout:'layouts/admin'});
-})
-router.get('/datakrsdetail',(req,res) =>{
-    res.render('pages/admin/datakrsdetail',{layout:'layouts/admin'});
-})
-router.get('/datakrstambah',(req,res) =>{
-    res.render('pages/admin/datakrstambah',{layout:'layouts/admin'});
-})
 
 module.exports = router;

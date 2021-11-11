@@ -5,7 +5,7 @@ router.get('/',(req,res) =>{
     //check user session
     const isNotLoggedIn = !req.session.user;
     if(isNotLoggedIn){
-        res.redirect('/login');
+        res.redirect('/auth/login');
     }
     else{
         res.render('pages/home');

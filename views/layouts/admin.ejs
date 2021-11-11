@@ -146,7 +146,7 @@
         $('#logout').click((e) => {
             title: 'Logout Confirmation';
             if (confirm("Anda ingin logout?")) {
-                $('#logout').attr('href', '/login');
+                $('#logout').attr('href', '/auth/login');
             } else {
                 $('#logout').attr('href', '#');
             }

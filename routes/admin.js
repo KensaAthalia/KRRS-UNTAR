@@ -1,4 +1,5 @@
 const express = require('express');
+const dosen = require('../models/dosen');
 const matkul = require('../models/matkul');
 const router = express.Router()
 
@@ -39,8 +40,9 @@ router.get('/Matkultambah',(req,res) =>{
     res.render('pages/admin/Matkultambah',{layout:'layouts/admin'});
 })
 
-router.get('/DataDosen',(req,res) =>{
-    res.render('pages/admin/DataDosen',{layout:'layouts/admin'});
+router.get('/DataDosen',async(req,res) =>{
+    var datadosen = await dosen.find();
+    res.render('pages/admin/DataDosen',{layout:'layouts/admin',dosens:datadosen});
 })
 
 router.get('/datadosentambah',(req,res) =>{

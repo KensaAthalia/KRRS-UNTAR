@@ -89,7 +89,7 @@ var done = 0;
 for (var i = 0; i < matkuls.length; i++) {
     matkuls[i].save((err, res) => {
         done++;
-        if(done == matkul.length) {
+        if(done == matkuls.length) {
             console.log('Berhasil tersimpan!');
             exit();
         }

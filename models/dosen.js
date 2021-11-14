@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const dosenSchema = mongoose.Schema({
     nip:{
-        type: String,
+        type: Number,
         unique: true,
         required: true
     },
@@ -15,8 +15,7 @@ const dosenSchema = mongoose.Schema({
         required:true
     },
     matkul: {
-        type:String,
-        required:true
+        type:Array
     },
     createdAt: {
         type: Date,

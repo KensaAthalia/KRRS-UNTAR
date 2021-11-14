@@ -74,11 +74,18 @@
         </tr>
         </thead>
         <tbody>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">1</th>
-            <td>10393012</td>
-            <td>CHAIRISNI LUBIS,Dra.,M.Kom.</td>
-            <td>TEKNIK INFORMATIKA</td>
+          <% var i = 0; %>
+          <% dosens.forEach((dosen) => { %>
+            <% var num = dosen.sks %>
+          <tr <tr <% if (i % 2 == 1){ %>
+            style="border-bottom:1px solid black;">
+          <% } else { %>
+            style="background-color:CCCCCC;border-bottom:1px solid black;">
+          <% } %>   
+            <th scope="row"><%= i=i+1 %></th>
+            <td><%= dosen.nip %></td>
+            <td><%= dosen.nama %></td>
+            <td><%= dosen.prodi %></td>
             <td>
               <a href="/admin/datadosenedit" type="button" class="btn btn-success"
                 style="border-radius: 20pt; width: 50pt;">Edit</a>
@@ -91,129 +98,10 @@
             </td>
 
           </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">2</th>
-            <td>10812001</td>
-            <td>JANSON HENDRYLI,S.Kom,M.Kom.</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>
-              <a href="/admin/datadosenedit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
-              &nbsp
-              <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
-                style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>
-            </td>
-
-          </tr>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">3</th>
-            <td>10805002</td>
-            <td>VINY CHRISTANTI MAWARDI,S.Kom.</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>
-              <a href="/admin/datadosenedit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
-              &nbsp
-              <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
-                style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>
-            </td>
-
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">4</th>
-            <td>10396060</td>
-            <td>BAGUS MULYAWAN,S.Kom,MM</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>
-              <a href="/admin/datadosenedit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
-              &nbsp
-              <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
-                style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>
-            </td>
-
-          </tr>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">5</th>
-            <td>10189013</td>
-            <td>DYAH ERNY HERWINDIATI,Dr.,Ir,M.si</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>
-              <a href="/admin/datadosenedit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
-              &nbsp
-              <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
-                style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>
-            </td>
-
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">6</th>
-            <td>10301014</td>
-            <td>LINA,ST.,M.Kom.</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>
-              <a href="/admin/datadosenedit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
-              &nbsp
-              <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
-                style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>
-            </td>
-
-          </tr>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">7</th>
-            <td>10390001</td>
-            <td>JEANNY PRAGANTHA,Ir.,M.Eng</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>
-              <a href="/admin/datadosenedit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
-              &nbsp
-              <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
-                style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>
-            </td>
-
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">8</th>
-            <td>10805001</td>
-            <td>DESI ARISANDI,S.Kom.</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>
-              <a href="/admin/datadosenedit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
-              &nbsp
-              <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
-                style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>
-            </td>
-
-          </tr>
-
+          <% }) %>
         </tbody>
       </table>
-      <h6 style="text-align: left;color: #000000; font-weight: bold;padding-left:10px;">Showing 1 to 8 of 8
+      <h6 style="text-align: left;color: #000000; font-weight: bold;padding-left:10px;">Showing 1 to 8 of <%= i %>
         entries</h6>
       <nav aria-label="Page navigation dosen">
         <div style="padding-right: 1%;">

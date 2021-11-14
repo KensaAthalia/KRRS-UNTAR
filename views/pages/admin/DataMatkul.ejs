@@ -93,7 +93,11 @@
           <% matkuls.forEach((matkul) => { %>
             <% var num = matkul.sks %>
             
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
+          <tr <% if (i % 2 == 1){ %>
+            style="border-bottom:1px solid black;">
+          <% } else { %>
+            style="background-color:CCCCCC;border-bottom:1px solid black;">
+          <% } %>   
             <th scope="row"><%= i=i+1 %></th>
             <td><%= matkul.kode %></td>
             <td><%= matkul.prodi %></td>
@@ -106,7 +110,7 @@
                 class = "badge badge-primary"
               <% } else { %>
                 class = "badge badge-danger"
-              <% } %>   y
+              <% } %>   
                 style="border-radius: 30px;padding:7px; width: 45px;height:38px;
                 font-size:12pt;color: white;"><%= matkul.sks %>
               </div>

@@ -32,7 +32,7 @@ var done = 0;
 for (var i = 0; i < users.length; i++) {
     users[i].save((err, res) => {
         done++;
-        if(done == user.length) {
+        if(done == users.length) {
             console.log('Berhasil tersimpan!');
             exit();
         }

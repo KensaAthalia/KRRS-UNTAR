@@ -25,6 +25,7 @@
     }
 
     </style>
+    <script src="/assets/badge.js"></script>
 </head>
 
 <ul class="nav nav-tabs" style="font-size: 12pt;">
@@ -88,191 +89,40 @@
         </tr>
         </thead>
         <tbody>
+          <% var i = 0; %>
+          <% matkuls.forEach((matkul) => { %>
+            <% var num = matkul.sks %>
+            
           <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">1</th>
-            <td>TK23015</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>WEB PROGRAMMING</td>
+            <th scope="row"><%= i=i+1 %></th>
+            <td><%= matkul.kode %></td>
+            <td><%= matkul.prodi %></td>
+            <td><%= matkul.matakuliah %></td>
             <td>
-              <div class="badge badge-danger"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">8
+              <div id="sks" 
+              <% if (num == 4){ %>
+                class = "badge badge-success"
+              <% } else if (num == 6){ %>
+                class = "badge badge-primary"
+              <% } else { %>
+                class = "badge badge-danger"
+              <% } %>   y
+                style="border-radius: 30px;padding:7px; width: 45px;height:38px;
+                font-size:12pt;color: white;"><%= matkul.sks %>
               </div>
             </td>
-            <td>GANJIL</td>
+            <td><%= matkul.semester %></td>
             <td>
               <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
                 style="border-radius: 20pt; width: 50pt;">Edit</a>
               <button type="button" class="btn btn-danger"
                 style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
             </td>
-
           </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">2</th>
-            <td>TK23016</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>COMPUTER SYSTEMS</td>
-            <td>
-              <div class="badge badge-primary"
-                style="border-radius: 30px; padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">6
-              </div>
-            </td>
-            <td>GANJIL</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-
-          </tr>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">3</th>
-            <td>TK23017</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>INTRODUCTION TO OPERATING SYSTEMS</td>
-            <td>
-              <div class="badge badge-success"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">4
-              </div>
-            </td>
-            <td>GANJIL</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">4</th>
-            <td>TK33010</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>DISTRIBUTED SYSTEMS</td>
-            <td>
-              <div class="badge badge-success"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">4
-              </div>
-            </td>
-            <td>GANJIL</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">5</th>
-            <td>TK13019</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>COMPUTATION I</td>
-            <td>
-              <div class="badge badge-success"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">4
-              </div>
-            </td>
-            <td>GANJIL</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">6</th>
-            <td>TK33010</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>INTRODUCTION TO ALGORITHMS</td>
-            <td>
-              <div class="badge badge-danger"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">8
-              </div>
-            </td>
-            <td>GANJIL</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">7</th>
-            <td>TK13021</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>DATABASE SYSTEMS</td>
-            <td>
-              <div class="badge badge-success"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">4
-              </div>
-            </td>
-            <td>GANJIL</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">8</th>
-            <td>TK33010</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>IT TRENDS</td>
-            <td>
-              <div class="badge badge-success"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">4
-              </div>
-            </td>
-            <td>GANJIL</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">9</th>
-            <td>TK13023</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>COMPUTATION II</td>
-            <td>
-              <div class="badge badge-danger"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">8
-              </div>
-            </td>
-            <td>GENAP</td>
-            <td>
-              <a href="/admin/datamatkuledit" n type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">10</th>
-            <td>TK13024</td>
-            <td>TEKNIK INFORMATIKA</td>
-            <td>COMPUTATION II</td>
-            <td>
-              <div class="badge badge-primary"
-                style="border-radius: 30px;padding:7px; width: 45px;height:38px;font-size:12pt;color: white;">6
-              </div>
-            </td>
-            <td>GENAP</td>
-            <td>
-              <a href="/admin/datamatkuledit" type="button" class="btn btn-success"
-                style="border-radius: 20pt; width: 50pt;">Edit</a>
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus</button>
-            </td>
-          </tr>
+          <% }) %>
         </tbody>
       </table>
-      <h6 style="text-align: left;color: #000000; font-weight: bold;padding-left:10px;">Showing 1 to 10 of 17
+      <h6 style="text-align: left;color: #000000; font-weight: bold;padding-left:10px;">Showing 1 to 10 of <%= i %>
         entries</h6>
       <nav aria-label="Page navigation">
         <div style="padding-right: 1%;">
@@ -294,6 +144,7 @@
       </form>
     </div>
 </div>
+
 
 <%- contentFor('title') %>
 Manajemen Data

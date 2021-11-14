@@ -1,4 +1,5 @@
-const express = require('express')
+const express = require('express');
+const matkul = require('../models/matkul');
 const router = express.Router()
 
 router.get('/adminHome',(req,res) =>{
@@ -25,8 +26,9 @@ router.get('/mahasiswabelumterjawab',(req,res) =>{
     res.render('pages/admin/mahasiswabelumterjawab',{layout:'layouts/admin'});
 })
 
-router.get('/DataMatkul',(req,res) =>{
-    res.render('pages/admin/DataMatkul',{layout:'layouts/admin'});
+router.get('/DataMatkul',async(req,res) =>{
+    var data = await matkul.find();
+    res.render('pages/admin/DataMatkul',{layout:'layouts/admin',matkuls:data});
 })
 
 router.get('/datamatkuledit',(req,res) =>{

@@ -30,11 +30,11 @@ router.post('/login', async (req,res) => {
                 }
             }
             else {
-                res.render('pages/login', {layout:false,error: 'Wrong Password!'})
+                res.render('pages/login', {layout:false,error: 'Wrong email or password!'})
             }
         }
     })
-    res.render('pages/login', {layout:false,error: 'Wrong email or password!'})
+    
 })
 
 

@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const bioUser = require('../models/bioUser')
+const mongoose = require('mongoose')
 
 router.get('/',(req,res) =>{
     //check user session
@@ -36,6 +38,33 @@ router.get('/lupapass4',(req,res) =>{
 router.get('/profil',(req,res) =>{
     res.render('pages/mahasiswa/profil');
 })
+
+router.post('/profil', async (req,res) => {
+    const myBio = new bioUser({
+        nomorPokokMahasiswa : req.body.nomorPokokMahasiswa,
+        namaMhs : req.body.namaMhs,
+        noRek : req.body.noRek,
+        ttl : req.body.ttl,
+        jk : req.body.jk,
+        agama : req.body.agama,
+        alamat : req.body.alamat,
+        noTelp : req.body.noTelp,
+        noHP : req.body.noHP,
+        email : req.body.email,
+        asalSekolah : req.body.asalSekolah,
+        noIjazah : req.body.noIjazah,
+        tglIjazah : req.body.tglIjazah,
+        namaOrtu : req.body.namaOrtu,
+        alamatOrtu : req.body.alamatOrtu,
+        telpOrtu : req.body.telpOrtu,
+    })
+    myBio.save((error,savedUser)=>{
+        if(error) throw error
+        console.log('Data Tersimpan');
+    })
+    res.render('pages/mahasiswa/profil',{saved_successfully:'Data Tersimpan'})
+})
+
 router.get('/cetak',(req,res) =>{
     res.render('pages/mahasiswa/cetak');
 })

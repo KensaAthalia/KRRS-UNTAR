@@ -32,12 +32,40 @@ router.get('/DataMatkul',async(req,res) =>{
     res.render('pages/admin/DataMatkul',{layout:'layouts/admin',matkuls:data});
 })
 
+router.get('/deleteMatkul/:kode',async(req,res)=>{
+    const matkulKode=req.params.kode;
+    await matkul.deleteOne({kode:matkulKode});
+    var data = await matkul.find();
+    res.render('pages/admin/DataMatkul',{layout:'layouts/admin',matkuls:data});
+})
+
 router.get('/datamatkuledit',(req,res) =>{
     res.render('pages/admin/datamatkuledit',{layout:'layouts/admin'});
 })
 
-router.get('/Matkultambah',(req,res) =>{
-    res.render('pages/admin/Matkultambah',{layout:'layouts/admin'});
+router.get('/Matkultambah',async(req,res) =>{
+    var data = await matkul.find();
+    res.render('pages/admin/Matkultambah',{layout:'layouts/admin',matkuls:data});
+})
+
+router.post('/saveMatkul/',async(req,res)=>{
+    const myMatkul = new matkul({
+        kode:req.body.Kode,
+        prodi:req.body.Prodi,
+        matakuliah:req.body.Matakuliah,
+        sks:req.body.Sks,
+        semester:req.body.Semester
+    });
+    myMatkul.save((error,savedMatkul)=>{
+    if(error){
+            throw error;
+    } else{
+        console.log('Data Tersimpan');
+    }
+        
+    })
+    var data = await matkul.find();
+    res.redirect('/admin/Matkultambah')
 })
 
 router.get('/DataDosen',async(req,res) =>{

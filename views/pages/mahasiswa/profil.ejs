@@ -2,102 +2,98 @@
   <style>
     #content {
       min-height: calc(100vh - 30px);
-    }
-
-    nav a {
-      text-decoration: none !important;
-      color: white;
-      text-align: justify;
-      margin-left: 9%;
-    }
-
-    .nav_img {
-      width: 30px;
-      height: 30px;
+      }
+      nav a{
+        text-decoration: none!important;
+        color: white;
+        text-align:justify;
+        margin-left: 9%;
+      }
+      .nav_img{
+      width: 30px; 
+      height: 30px; 
       float: left;
-    }
+      }
+      .nav-tabs{
+        border-bottom: 1pt solid black!important;
+        font-size: 14pt;
+        margin-top: 1pt;
+      }
+      .data{
+        margin: 10px;
+        padding:10px;
+        border: 1pt solid black;
+        border-radius: 10px;
+        float: left;
+      }
+      input[type="text"]{
+        width:55%;
+        border-radius: 5px;
+      }
+      .margin-right {
+        margin-right: 10pt;
+      }
 
-    .nav-tabs {
-      border-bottom: 1pt solid black !important;
-      font-size: 14pt;
-      margin-top: 1pt;
-    }
+      .nav-bawah{
+        background:black;
+        height: 3px;
+      }
 
-    .data {
-      margin: 10px;
-      padding: 10px;
-      border: 1pt solid black;
-      border-radius: 10px;
-      float: left;
-    }
-
-    input[type="text"] {
-      width: 55%;
-      border-radius: 5px;
-    }
-
-    .margin-right {
-      margin-right: 10pt;
-    }
-
-    .nav-bawah {
-      background: black;
-      height: 3px;
-    }
   </style>
 </head>
-<ul class="nav nav-tabs">
-  <li class="nav-items">
-    <a class="nav-link active" href="/profil"
-      style="font-weight: 800;color:black; letter-spacing: 3pt; font-size: 8pt;">BIODATA</a>
-    <div class="nav-bawah"></div>
-  </li>
-  <li class="nav-items">
-    <a class="nav-link" href="/gantipass"
-      style="font-weight: 800;color:black;letter-spacing: 3pt; font-size: 8pt;">GANTI PASSWORD</a>
-  </li>
-</ul>
-<form method="post" action="/profil">
-  <div class="data" style="width:50%;height:65%;">
-    <h3 style="font-weight: 700;">Data Mahasiswa</h3>
-    <p>Nomor Pokok Mahasiswa <input type="text" name="nomorPokokMahasiswa" style="float:right;"></p>
-    <p>Nama Mahasiswa <input type="text" name="namaMhs" style="float:right;"></p>
-    <p>Nomor Rekening<input type="text" name="noRek" style="float:right;"></p>
-    <p>Tempat, Tanggal Lahir<input type="text" name="ttl" style="float:right;"></p>
-    Jenis Kelamin
-    <div style="float: right;">
-      <input type="radio" name="jk" value="laki-laki" style="margin-right: 10pt;"> Laki-Laki
-      &emsp;&emsp;&emsp;&emsp;
-      <input type="radio" name="jk" value="perempuan" style="margin-right: 10pt;">Perempuan &emsp;&ensp;
-    </div>
-    <p></p>
-    <p>Agama <input type="text" name="agama" style="float:right;"></p>
-    <p>Alamat <input type="text" name="alamat" style="float:right;"></p>
-    <p>Telephone <input type="text" name="noTelp" style="float:right;"></p>
-    <p>Handphone <input type="text" name="noHP" style="float:right;"></p>
-    <p>Email <input type="text" name="email" style="float:right;"></p>
-  </div>
-  <div class="data" style="width:45%;height:25%;">
-    <h3 style="font-weight: 700;">Data Sekolah</h3>
-    <p>Asal Sekolah <input type="text" name="asalSekolah" style="float:right;"></p>
-    <p>No. Ijazah <input type="text" name="noIjazah" style="float:right;"></p>
-    <p>Tanggal Ijazah <input type="text" name="tglIjazah" style="float:right;"></p>
-  </div>
-  <div class="data" style="width:45%;height:25%;">
-    <h3 style="font-weight: 700;">Data Orang Tua/Wali</h3>
-    <p>Nama Orang tua/Wali <input type="text" name="namaOrtu" style="float:right;"></p>
-    <p>Alamat<input type="text" name="alamatOrtu" style="float:right;"></p>
-    <p>Telepon <input type="text" name="telpOrtu" style="float:right;"></p>
-  </div>
-  <div>
-    <input type="submit" name="Simpan" value="Simpan" class="btn"
-      style="margin-left: 40%; margin-top: 5% ;background-color:#A01627; color:white; font-size: 15pt; width:150px; font-weight: bold; border-radius: 30px;" />
-  </div>
-</form>
-<% if(locals.saved_successfully) { %>
-<span class="text-danger pl-2" style="font-size: 2.2vh; margin-left: 5%;">
-  <%= saved_successfully %>
-</span>
-<% } %>
-<%- contentFor ('title') %>
-Profil
+            <ul class="nav nav-tabs">
+              <li class="nav-items">
+                <a class="nav-link active" href="/profil"
+                  style="font-weight: 800;color:black; letter-spacing: 3pt; font-size: 8pt;">BIODATA</a>
+                <div class="nav-bawah"></div>
+              </li>
+              <li class="nav-items">
+                <a class="nav-link" href="/gantipass"
+                  style="font-weight: 800;color:black;letter-spacing: 3pt; font-size: 8pt;">GANTI PASSWORD</a>
+              </li>
+            </ul>
+            <form method="post" action="/profil">
+            <div class="data" style="width:50%;height:65%;">
+              <h3 style="font-weight: 700;">Data Mahasiswa</h3>
+                <p>Nomor Pokok Mahasiswa <input type="text" name="nomorPokokMahasiswa" style="float:right;"></p>
+                <p>Nama Mahasiswa <input type="text" name="namaMhs" style="float:right;"></p>
+                <p>Nomor Rekening<input type="text" name="noRek" style="float:right;"></p>
+                <p>Tempat, Tanggal Lahir<input type="text" name="ttl" style="float:right;"></p>
+                Jenis Kelamin
+                <div style="float: right;">
+                  <input type="radio" name="jk" value="laki-laki" style="margin-right: 10pt;"> Laki-Laki
+                  &emsp;&emsp;&emsp;&emsp;
+                  <input type="radio" name="jk" value="perempuan" style="margin-right: 10pt;">Perempuan &emsp;&ensp;
+                </div>
+                <p></p>
+                <p>Agama <input type="text" name="agama" style="float:right;"></p>
+                <p>Alamat <input type="text" name="alamat" style="float:right;"></p>
+                <p>Telephone <input type="text" name="noTelp" style="float:right;"></p>
+                <p>Handphone <input type="text" name="noHP" style="float:right;"></p>
+                <p>Email <input type="text" name="email" style="float:right;"></p>
+            </div>
+            <div class="data" style="width:45%;height:25%;">
+              <h3 style="font-weight: 700;">Data Sekolah</h3>
+              <p>Asal Sekolah <input type="text" name="asalSekolah" style="float:right;"></p>
+              <p>No. Ijazah <input type="text" name="noIjazah" style="float:right;"></p>
+              <p>Tanggal Ijazah <input type="text" name="tglIjazah" style="float:right;"></p>
+            </div>
+            <div class="data" style="width:45%;height:25%;">
+              <h3 style="font-weight: 700;">Data Orang Tua/Wali</h3>
+              <p>Nama Orang tua/Wali <input type="text" name="namaOrtu" style="float:right;"></p>
+              <p>Alamat<input type="text" name="alamatOrtu" style="float:right;"></p>
+              <p>Telepon <input type="text" name="telpOrtu" style="float:right;"></p>
+            </div>
+            <div>
+              <input type="submit" name="Simpan" value="Simpan" class="btn"
+                  style="margin-left: 40%; margin-top: 5% ;background-color:#A01627; color:white; font-size: 15pt; width:150px; font-weight: bold; border-radius: 30px;"/>
+              </div>
+            </form>
+            <% if(locals.saved_successfully) { %>
+              <span class="text-danger pl-2" style="font-size: 2.2vh; margin-left: 5%;">
+                <%= saved_successfully %>
+              </span>
+              <% } %>
+              <%- contentFor ('title') %>
+              Profil
+              

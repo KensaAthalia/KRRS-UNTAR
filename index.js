@@ -21,7 +21,7 @@ app.set('layout','layouts/main.ejs','layouts/admin.ejs');
 
 app.use(layouts);
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(session ({
     secret: 'som3_secre3t_keys',

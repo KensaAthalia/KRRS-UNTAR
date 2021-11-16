@@ -73,8 +73,34 @@ router.get('/DataDosen',async(req,res) =>{
     res.render('pages/admin/DataDosen',{layout:'layouts/admin',dosens:datadosen});
 })
 
-router.get('/datadosentambah',(req,res) =>{
-    res.render('pages/admin/datadosentambah',{layout:'layouts/admin'});
+router.get('/deleteDosen/:nip',async(req,res)=>{
+    const dosenNip=req.params.nip;
+    await dosen.deleteOne({nip:dosenNip});
+    var data = await dosen.find();
+    res.render('pages/admin/DataDosen',{layout:'layouts/admin',dosens:data});
+})
+
+router.get('/datadosentambah',async(req,res) =>{
+    var datadosen = await dosen.find();
+    res.render('pages/admin/datadosentambah',{layout:'layouts/admin',dosens:datadosen});
+})
+
+router.post('/saveDosen/',async(req,res)=>{
+    const myDosen = new dosen({
+        nip:req.body.NIP,
+        nama:req.body.Namadosen,
+        prodi:req.body.Prodi,
+    });
+    myDosen.save((error,savedDosen)=>{
+    if(error){
+            throw error;
+    } else{
+        console.log('Data Tersimpan');
+    }
+        
+    })
+    var data = await dosen.find();
+    res.redirect('/admin/datadosentambah')
 })
 
 router.get('/datadosenedit',(req,res) =>{

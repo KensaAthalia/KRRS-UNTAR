@@ -76,8 +76,7 @@
         <tbody>
           <% var i = 0; %>
           <% dosens.forEach((dosen) => { %>
-            <% var num = dosen.sks %>
-          <tr <tr <% if (i % 2 == 1){ %>
+          <tr <% if (i % 2 == 1){ %>
             style="border-bottom:1px solid black;">
           <% } else { %>
             style="background-color:CCCCCC;border-bottom:1px solid black;">
@@ -90,8 +89,8 @@
               <a href="/admin/datadosenedit" type="button" class="btn btn-success"
                 style="border-radius: 20pt; width: 50pt;">Edit</a>
               &nbsp
-              <button type="button" class="btn btn-danger"
-                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </button>
+              <a href="/admin/deleteDosen/<%= dosen.nip %>" class="btn btn-danger"
+                style="border-radius: 20pt; width: 50pt; margin-top: 3pt;">Hapus </a>
               &nbsp
               <a href="/admin/DosenMatkul" type="button" class="btn btn-primary"
                 style="border-radius: 20pt; width: 95pt;">Mata Kuliah</a>

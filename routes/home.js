@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const bioUser = require('../models/bioUser')
+const mongoose = require('mongoose')
 
 router.get('/',(req,res) =>{
     //check user session
@@ -39,7 +40,7 @@ router.get('/profil',(req,res) =>{
 })
 
 router.post('/profil', async (req,res) => {
-    let item = new bioUser({
+    const myBio = new bioUser({
         nomorPokokMahasiswa : req.body.nomorPokokMahasiswa,
         namaMhs : req.body.namaMhs,
         noRek : req.body.noRek,
@@ -57,13 +58,11 @@ router.post('/profil', async (req,res) => {
         alamatOrtu : req.body.alamatOrtu,
         telpOrtu : req.body.telpOrtu,
     })
-
-    try {
-        await item.save()
-        res.render('pages/mahasiswa/profil', { saved_successfully:"Data anda berhasil di simpan!"});
-    } catch (e) {
-        res.render('pages/mahasiswa/profil', {VARIABLE_ERROR: "ERROR"});
-        }
+    myBio.save((error,savedUser)=>{
+        if(error) throw error
+        console.log('Data Tersimpan');
+    })
+    res.render('pages/mahasiswa/profil',{saved_successfully:'Data Tersimpan'})
 })
 
 router.get('/cetak',(req,res) =>{

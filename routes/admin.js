@@ -1,6 +1,7 @@
 const express = require('express');
 const dosen = require('../models/dosen');
 const matkul = require('../models/matkul');
+const mahasiswa = require('../models/mahasiswa');
 const router = express.Router()
 
 router.get('/adminHome',(req,res) =>{
@@ -110,12 +111,36 @@ router.get('/datadosenedit',(req,res) =>{
 router.get('/DosenMatkul',(req,res) =>{
     res.render('pages/admin/DosenMatkul',{layout:'layouts/admin'});
 })
-
-router.get('/DataMahasiswa',(req,res) =>{
-    res.render('pages/admin/DataMahasiswa',{layout:'layouts/admin'});
+router.get('/DataMahasiswa',async(req,res) =>{
+    var datamahasiswa = await mahasiswa.find();
+    res.render('pages/admin/DataMahasiswa',{layout:'layouts/admin',mahasiswas:datamahasiswa});
 })
-router.get('/datamahasiswatambah',(req,res) =>{
-    res.render('pages/admin/datamahasiswatambah',{layout:'layouts/admin'});
+router.get('/datamahasiswatambah',async(req,res) =>{
+    var datamahasiswa = await mahasiswa.find();
+    res.render('pages/admin/datamahasiswatambah',{layout:'layouts/admin',mahasiswas:datamahasiswa});
+})
+router.get('/deleteMahasiswa/:nim',async(req,res)=>{
+    const mahasiswaNim=req.params.nim;
+    await mahasiswa.deleteOne({nim:mahasiswaNim});
+    var data = await mahasiswa.find();
+    res.render('pages/admin/DataMahasiswa',{layout:'layouts/admin',mahasiswas:data});
+})
+router.post('/saveMahasiswa',async(req,res)=>{
+    const myMahasiswa = new mahasiswa({
+        nim:req.body.NIM,
+        nama:req.body.Namamahasiswa,
+        prodi:req.body.Prodi,
+    });
+    myMahasiswa.save((error,savedMahasiswa)=>{
+    if(error){
+            throw error;
+    } else{
+        console.log('Data Tersimpan');
+    }
+        
+    })
+    var data = await mahasiswa.find();
+    res.redirect('/admin/datamahasiswatambah')
 })
 router.get('/datamahasiswaedit',(req,res) =>{
     res.render('pages/admin/datamahasiswaedit',{layout:'layouts/admin'});

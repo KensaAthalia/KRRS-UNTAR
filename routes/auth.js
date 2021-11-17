@@ -57,7 +57,7 @@ router.post('/forgot', async (req,res) => {
     await data.forEach((account) => {
         if (email == account.email) {
             res.redirect('/lupapass3');
-                if (password.NewPassword == ConfirmPassword) {
+                if (NewPassword == ConfirmPassword) {
                     account.password == NewPassword;
                     account.save((error,savedUser)=>{
                         if(error) throw error

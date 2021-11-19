@@ -29,7 +29,7 @@ app.use(session ({
 }))
 
 app.use((req, res, next) => {
-    res.locals.isLoggedIn = req.session.isLoggedIn;
+    res.locals.session = req.session;
     next();
 })
 

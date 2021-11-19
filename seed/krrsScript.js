@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const user = require('../models/user');
-const User = require('../models/user')
+const krrs = require('../models/krrs');
+const Krrs = require('../models/krrs')
 
 mongoose.connect(('mongodb+srv://admin:UNTAR2020@cluster0.nu6km.mongodb.net/KRRS?retryWrites=true&w=majority')
 ,(err,res) => {
@@ -12,21 +12,19 @@ mongoose.connect(('mongodb+srv://admin:UNTAR2020@cluster0.nu6km.mongodb.net/KRRS
     }
 })
 
-const users = [
-    new User({
-        username: 'jmseffendy',
-        name: 'JAMES SUGIARTO EFFENDY',
-        email: 'jmseffendy@krs.com',
-        password: '123456',
+const krrss = [
+    new krrs({
+        nim: 535200019,
+        matkul:['TK23015'],
     }),
     
 ]
 
 var done = 0;
-for (var i = 0; i < users.length; i++) {
-    users[i].save((err, res) => {
+for (var i = 0; i < krrss.length; i++) {
+    krrss[i].save((err, res) => {
         done++;
-        if(done == users.length) {
+        if(done == krrss.length) {
             console.log('Berhasil tersimpan!');
             exit();
         }

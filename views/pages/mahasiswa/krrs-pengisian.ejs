@@ -57,8 +57,9 @@
         </h3>
         <select style="width:95%; height:60px; border-radius: 5px; color:gray ;margin-left: 10px;">
           <option value="" disabled selected hidden style="color: gray;"> --- Pilih Matakuliah ---</option>
-          <option value="Web programming">Web Programming</option>
-          <option value="Computer System">Computer System</option>
+          <% matkuls.forEach((matkul) =>{ %>
+          <option value=<%= matkul.kode %>> <%= matkul.matakuliah %></option>
+          <% }) %>
         </select>
         <h3 class="p-krrs" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 10px;">
           Pilih Kelas

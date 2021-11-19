@@ -1,30 +1,33 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pengisian KRRS Online</title>
-<link rel="stylesheet" href="assets/Style.css">
-  </head>
-  <body>
-    <div class="bg_image">
-      <div class="header">
-      <img src="images/untarputih.png" alt="logo" style="width: 50px; margin-left: 8%; margin-top: 3px;">
-        <h1 style="margin-top: -60px; margin-left: 500px; font-size: 30pt; color:white;">Pengisian KRRS Online</h1>
-      </div>
-    </div>
-    <div class="center" style="margin-left: -28%; margin-top: 3%; height:250px; ">
-        <form method="post" action="/auth/forgot" style="padding-top: 30px;">
-            <label for="pass" style="font-weight: bolder;">Reset password</label>
-            <input type="password" id="pass" name="New Password" placeholder="New Password">
-            <input type="password" id="pass" name="Confirm Password" placeholder="Confirm Password">
-            <a href="/auth/login" style="color:#A01627; font-size: 10pt; text-decoration: none;">Kembali ke login page</a>
-      <div style="margin-left:155px; ">
-            <input type="submit" value="Continue" style="background-color:#A01627; color:white; font-size: 12pt; width:175px">
-    </div>
-  </form>
-</div>
-  </body>
-</html>
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengisian KRRS Online</title>
+  <link rel="stylesheet" href="assets/Style.css">
+</head>
+
+<body>
+  <div class="bg_image">
+    <div class="header">
+      <img src="images/untarputih.png" alt="logo" style="width: 50px; margin-left: 8%; margin-top: 3px;">
+      <h1 style="margin-top: -60px; margin-left: 500px; font-size: 30pt; color:white;">Pengisian KRRS Online</h1>
+    </div>
+  </div>
+  <div class="center" style="margin-left: -28%; margin-top: 3%; height:250px; ">
+    <form method="post" action="/auth/forgot" style="padding-top: 30px;">
+      <label for="pass" style="font-weight: bolder;">Reset password</label>
+      <input type="password" id="passBaru" name="passBaru" placeholder="New Password">
+      <input type="password" id="passConfirm" name="passConfirm" placeholder="Confirm Password">
+      <a href="/auth/login" style="color:#A01627; font-size: 10pt; text-decoration: none;">Kembali ke login page</a>
+      <div style="margin-top: 2%;margin-left:30%; ">
+        <input type="submit" value="Continue"
+          style="background-color:#A01627; color:white; font-size: 12pt; width:175px">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

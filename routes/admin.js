@@ -4,6 +4,17 @@ const matkul = require('../models/matkul');
 const mahasiswa = require('../models/mahasiswa');
 const router = express.Router()
 
+router.get('/',(req,res) =>{
+    //check user session
+    const isNotLoggedIn = !req.session.user;
+    if(isNotLoggedIn){
+        res.redirect('/auth/login');
+    }
+    else{
+        res.redirect('/admin/adminHome')
+    }
+})
+
 router.get('/adminHome',(req,res) =>{
     //check user session
     res.render('pages/admin/adminHome',{layout:'layouts/admin'});

@@ -1,36 +1,33 @@
 <ul class="nav nav-tabs">
-    <li class="nav-items">
-      <a class="nav-link active" href="/chatadmin"
-        style="font-weight: 800; color:black; letter-spacing: 3pt; font-size: 8pt;">CHAT ADMIN</a>
-      <div class="nav-bawah"></div>
-    </li>
-    <li class="nav-items">
-      <a class="nav-link" href="/historychat"
-        style="font-weight: 800; color:black; letter-spacing: 3pt; font-size: 8pt;">HISTORY CHAT</a>
-    </li>
-  </ul>
-  <div class="container-auto"
-    style="border: 1pt solid black;margin: auto; margin-top: 8% ; width: 45%; height: 40%;border-radius: 10px; padding : 20px">
-    <div>
-      <h3 style="text-align: center;font-size: 15pt; font-weight: 900;">
-        Jika ada pertanyaan mengenai KRRS
-        <br>
-        ONLINE, bisa ajukan pertanyaan melalui
-        <br>
-        kolom chat di bawah ini.
-      </h3>
-    </div>
-    <div style="text-align:center;margin: 15px;">
-      <input class="admin" style="width:110%;height:40%;margin-left: -25px;" type="text"
-        placeholder="Chat Admin" id="chatAdmin" name="chatAdmin">
-    </div>
-    <div>
-      <a href="/chatadmin" id="Send">
-        <button class="btn" style="background-color: #A01627; color: white; width: 250px;height: 50px; 
-          border-radius: 30px; margin-left: 80px; font-weight:750;font-size: 15pt;">Send</button>
-      </a>
-    </div>
+  <li class="nav-items">
+    <a class="nav-link active" href="/chatadmin"
+      style="font-weight: 800; color:black; letter-spacing: 3pt; font-size: 8pt;">CHAT ADMIN</a>
+    <div class="nav-bawah"></div>
+  </li>
+  <li class="nav-items">
+    <a class="nav-link" href="/historychat"
+      style="font-weight: 800; color:black; letter-spacing: 3pt; font-size: 8pt;">HISTORY CHAT</a>
+  </li>
+</ul>
+<div class="container-auto"
+  style="border: 1pt solid black;margin: auto; margin-top: 8% ; width: 45%; height: 45%;border-radius: 10px; padding : 20px">
+  <div>
+    <h3 style="text-align: center;font-size: 15pt; font-weight: 900;">
+      Jika ada pertanyaan mengenai KRRS
+      <br>
+      ONLINE, bisa ajukan pertanyaan melalui
+      <br>
+      kolom chat di bawah ini.
+    </h3>
   </div>
 
-  <%- contentFor('title') %>
-  Contact Us
+  <form action="/chatadmin" method="post" >
+    <div class="isi-form" style="margin: 20px;">
+      <input class="chatadmin" style="width:110%;height:40%;margin-left: -25px;" type="text" placeholder="chatadmin" id="txtchatadmin" name="txtchatadmin">
+      <input type="submit" name="Send" value="Send"class="btn"
+        style="background-color:#A01627; color:white; font-size: 15pt; width:150px; font-weight: bold; border-radius: 30px;margin-left: 35%; margin-top: 3%;">
+  </div>
+  </form>
+</div>
+<%- contentFor('title') %>
+Contact Us

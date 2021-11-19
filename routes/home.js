@@ -105,12 +105,14 @@ router.get('/krrs',(req,res) =>{
 
 router.get('/krrs-pengisian',async(req,res) =>{
     var Matkul = await matkul.find();
+    var pilMatkul = req.body.pilMatkul;
     var Nama = req.session.user;
     var NIM = req.session.nim;
+    console.log(pilMatkul)
     res.render('pages/mahasiswa/krrs-pengisian',{
         matkuls:Matkul,
         namaUser:Nama,
-        nim:NIM
+        nim:NIM,
     });
 })
 

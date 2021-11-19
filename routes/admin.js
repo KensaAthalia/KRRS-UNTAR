@@ -80,6 +80,11 @@ router.post('/saveMatkul/',async(req,res)=>{
     res.redirect('/admin/Matkultambah')
 })
 
+router.get('/JadwalMatkul',async(req,res) =>{
+    var data = await matkul.find();
+    res.render('pages/admin/JadwalMatkul',{layout:'layouts/admin',matkuls:data});
+})
+
 router.get('/DataDosen',async(req,res) =>{
     var datadosen = await dosen.find();
     res.render('pages/admin/DataDosen',{layout:'layouts/admin',dosens:datadosen});

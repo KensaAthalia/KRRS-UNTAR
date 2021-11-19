@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const bioUser = require('../models/bioUser')
+const chatadmin = require('../models/chatadmin')
 const mongoose = require('mongoose')
+
 
 router.get('/',(req,res) =>{
     //check user session
@@ -96,9 +98,25 @@ router.get('/panduan',(req,res) =>{
 router.get('/panduanfk',(req,res) =>{
     res.render('pages/mahasiswa/panduanfk');
 })
-
 router.get('/chatadmin',(req,res) =>{
-    res.render('pages/mahasiswa/chatadmin');
+    res.render('pages/mahasiswa/chatadmin',{chatadmins:chatadmin});
+})
+router.post('/chatadmin', async (req,res) => {
+    try {
+        var myChat = new chatadmin({
+            pertanyaan:req.body.txtchatadmin
+        });
+        myChat.save()
+        console.log('saved')
+        
+    } catch (error) {
+        res.redirect('/chatadmin')
+        return console.log ('error',error);
+    }
+    finally{
+        console.log('Message Posted')
+    }
+    res.redirect('/chatadmin')
 })
 
 router.get('/historychat',(req,res) =>{

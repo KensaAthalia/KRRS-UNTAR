@@ -4,6 +4,7 @@ const bioUser = require('../models/bioUser')
 const chatadmin = require('../models/chatadmin')
 const matkul = require('../models/matkul')
 
+
 router.get('/',(req,res) =>{
     //check user session
     const isNotLoggedIn = !req.session.user;
@@ -139,7 +140,6 @@ router.get('/panduanfk',(req,res) =>{
         nim:NIM
     });
 })
-
 router.get('/chatadmin',(req,res) =>{
     var Nama = req.session.user;
     var NIM = req.session.nim;

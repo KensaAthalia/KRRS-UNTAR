@@ -1,5 +1,5 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require('express')
+const bodyParser = require('body-parser')
 const session = require('express-session')
 const layouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
@@ -35,13 +35,13 @@ app.use((req, res, next) => {
 
 //routes
 const homeRoute = require('./routes/home')
-app.use('/',homeRoute)
+app.use('/',homeRoute);
 
 const adminRoute = require('./routes/admin')
-app.use('/admin',adminRoute)
+app.use('/admin',adminRoute);
 
 const authRoute = require('./routes/auth')
-app.use('/auth',authRoute)
+app.use('/auth',authRoute);
 
 app.get('/',(req,res)=>{
     res.send('Hello World')

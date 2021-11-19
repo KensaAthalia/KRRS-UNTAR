@@ -38,17 +38,21 @@
       </div>
     </div>
     <div>
+      <form method="post" action="/auth/gantipass">
       <div class="isi-form" style="margin: 20px;">
         <input class="pass" type="password" placeholder="New Password" id="newPass" name="newPass">
         <br><br>
         <input class="pass" type="password" placeholder="Confirm Password" id="conPass" name="conPass">
-        <a href="/gantipassword" id="Simpan">
-          <button class="btn"
-            style="background-color:#A01627; color:white; font-size: 15pt; width:150px; font-weight: bold; border-radius: 30px;margin-left: 35%; margin-top: 10%;">Simpan</button>
-        </a>
+          <input type="submit" name="Simpan" value="Simpan"class="btn"
+            style="background-color:#A01627; color:white; font-size: 15pt; width:150px; font-weight: bold; border-radius: 30px;margin-left: 35%; margin-top: 10%;">
       </div>
+    </form>
     </div>
   </div>
-
+  <% if(locals.saved_successfully) { %>
+    <span class="text-danger pl-2" style="font-size: 2.2vh; margin-left: 5%;">
+      <%= saved_successfully %>
+    </span>
+    <% } %>
   <%- contentFor('title') %>
   Ganti Password

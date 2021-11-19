@@ -25,7 +25,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.use(session ({
     secret: 'som3_secre3t_keys',
-    cookie: {}    
+    resave: false,
+    saveUninitialized: false,
+    cookie: {},
+        
 }))
 
 app.use((req, res, next) => {

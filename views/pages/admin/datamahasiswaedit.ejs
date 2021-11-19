@@ -1,177 +1,73 @@
-<head>
-    <style>
-    .form-mahasiswatambah {
-      border: 1px solid black;
-      max-height: 600px;
-      width: 98%;
-      margin-left: 10px;
-      margin-top: 7px;
-      border-color: black;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      float: left;
-    }
-
-    .form-mahasiswatambahfix {
-      border: 1px solid black;
-      height: 280px;
-      width: 98%;
-      margin-left: 10px;
-      margin-top: 7px;
-      border-color: black;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      float: left;
-      margin-bottom: 3%;
-    }
-
-    .form-datamahasiswatambah th,
-    td,
-    tr {
-      padding: 6px;
-    }
-
-    .form-datamahasiswatambahfix th,
-    td,
-    tr {
-      padding: 8px;
-    }
-
-    .form-mahasiswatambah input {
-      border-radius: 5px;
-    }
-
-    tr,
-    td {
-      font-weight: 600;
-    }
-    </style>
-</head>
-
 <ul class="nav nav-tabs" style="font-size: 12pt;">
-    <li class="nav-items">
-      <a class="nav-link" href="/admin/DataMatkul"
-        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">MATA KULIAH</a>
+  <li class="nav-items">
+    <a class="nav-link" href="/admin/DataMatkul"
+      style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">MATA KULIAH</a>
 
-    </li>
-    <li class="nav-items">
-      <a class="nav-link" href="/admin/DataDosen"
-        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">DATA DOSEN</a>
-    </li>
-    <li class="nav-items">
-      <a class="nav-link active" href="/admin/DataMahasiswa"
-        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA MAHASISWA</a>
-      <div class="nav-bawah"></div>
-    </li>
-    <li class="nav-items">
-      <a class="nav-link" href="/admin/DataKHS"
-        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KHS</a>
-    </li>
-    <li class="nav-items">
-      <a class="nav-link" href="/admin/DataKRS"
-        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KRS</a>
-    </li>
-  </ul>
-  <div style="font-weight: 900; margin-left: 10px;font-size: 20pt; margin-top: 10px; width:50%;">Data Mahasiswa
-  </div>
+  </li>
+  <li class="nav-items">
+    <a class="nav-link" href="/admin/DataDosen"
+      style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">DATA DOSEN</a>
+  </li>
+  <li class="nav-items">
+    <a class="nav-link active" href="/admin/DataMahasiswa"
+      style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA MAHASISWA</a>
+    <div class="nav-bawah"></div>
+  </li>
+  <li class="nav-items">
+    <a class="nav-link" href="/admin/DataKHS"
+      style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KHS</a>
+  </li>
+  <li class="nav-items">
+    <a class="nav-link" href="/admin/DataKRS"
+      style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt;color:black;">DATA KRS</a>
+  </li>
+</ul>
+
+<ul class="nav nav-tabs">
+  <div style="font-weight: 900; margin-left: 10px;font-size: 20pt; margin-top: 6px; width:50%;">Edit Data
+    Mahasiswa
+</ul>
+
+<div class="mb-3">
+  <label for="Semester" class="form-label" style="font-size: 12pt;font-weight: 900;">Semester</label>
+  <input type="number" class="form-control" id="Semester" style="margin-top:-9pt;"></div>
+<div class="mb-3">
+  <label for="  TahunAjaran" class="form-label" style="font-size: 12pt;font-weight: 900;">Tahun Ajaran</label>
+  <input type="TahunAjaran" class="form-control" id="TahunAjaran" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="  Kelas" class="form-label" style="font-size: 12pt;font-weight: 900;">Kelas</label>
+  <input type="Kelas" class="form-control" id="kelas" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="  NIM" class="form-label" style="font-size: 12pt;font-weight: 900;">NIM</label>
+  <input type="number" class="form-control" id="NIM" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="  Nama" class="form-label" style="font-size: 12pt;font-weight: 900;">Nama</label>
+  <input type="Nama" class="form-control" id="Nama" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="  Password" class="form-label" style="font-size: 12pt;font-weight: 900;">Password</label>
+  <input type="Password" class="form-control" id="Password" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for="  Fakultas" class="form-label" style="font-size: 12pt;font-weight: 900;">Fakultas</label>
+  <input type="Fakultas" class="form-control" id="Fakultas" style="margin-top: -8pt;">
+</div>
+<div class="mb-3">
+  <label for=" IPK" class="form-label" style="font-size: 12pt;font-weight: 900;">IPK</label>
+  <input type="IPK" class="form-control" id="IPK" style="margin-top: -8pt;">
 </div>
 
-<div class="form-mahasiswatambah" style="margin-left: 5px; margin-top: 10px;">
-  <div style="width:100% ; height:15px;background-color:black; border-top-left-radius: 10px;
-          border-top-right-radius: 10px;"></div>
-  <div>
-    <form>
-      <table style="text-align:center;margin: 20px;padding: auto;">
-        <tr style="border-bottom:1px solid black;letter-spacing: 3pt;">
-          <th scope="col" style="text-align: center;width:3%">NO</th>
-          <th scope="col" style="text-align: center;width:3%">NIM</th>
-          <th scope="col" style="text-align: center;width:20%">NAMA MAHASISWA</th>
-          <th scope="col" style="text-align: center;width:20%">PRODI</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black">
-            <th scope="row">1</th>
-            <td><input type="NIM" id="NIM"></td>
-            <td><input type="namamahasiswa" id="namamahasiswa"></td>
-            <td><input type="prodi" id="prodi"></td>
 
-          </tr>
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">2</th>
-            <td><input type="NIM" id="NIM"></td>
-            <td><input type="namamahasiswa" id="namamahasiswa"></td>
-            <td><input type="prodi" id="prodi"></td>
-          </tr>
 
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black">
-            <th scope="row">3</th>
-            <td><input type="NIM" id="NIM"></td>
-            <td><input type="namamahasiswa" id="namamahasiswa"></td>
-            <td><input type="prodi" id="prodi"></td>
-          </tr>
 
-        </tbody>
-      </table>
-      <div>
-        <button type="button" class="btn btn-success"
-          style="border-radius: 20pt; width: 70pt;margin-left: 38%;margin-top: 25px;">Save</button>
-        <button type="button" class="btn btn-danger"
-          style="border-radius: 20pt; width: 70pt;margin-top: 25px;">Batal</button>
-        <a href="/admin/DataMahasiswa" type="button" class="btn btn-primary"
-          style="border-radius: 20pt; width: 70pt;margin-top: 25px;">Tutup</a>
-      </div>
-    </form>
-  </div>
+<div>
+  <button type="button" class="btn btn-success" style="border-radius: 20pt; width: 70pt;margin-left: 38%;">Save</button>
+  <button type="button" class="btn btn-danger" style="border-radius: 20pt; width: 70pt;">Batal</button>
+  <a href="/admin/DataMahasiswa" type="button" class="btn btn-primary" style="border-radius: 20pt; width: 70pt;">Tutup</a>
 </div>
-<div class="form-mahasiswatambahfix" style="margin-left: 4px; margin-top:60px;margin-bottom:4px;">
-  <div style="width:100% ; height:15px;background-color:black; border-top-left-radius: 10px;
-          border-top-right-radius: 10px;"></div>
-  <div>
-    <form>
-      <table class="dosentambahfix" style="text-align:center;margin: 20px;padding: auto;">
-        <tr style="border-bottom:1px solid black;letter-spacing: 3pt;">
-          <th scope="col" style="text-align: center;width:3%">NO</th>
-          <th scope="col" style="text-align: center;width:3%">NIM</th>
-          <th scope="col" style="text-align: center;width:5%">NAMA MAHASISWA</th>
-          <th scope="col" style="text-align: center;width:5%">PRODI</th>
-        </tr>
-        </thead>
-        <tbody>
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">1</th>
-            <td>535200001</td>
-            <td>DAMEETHIA ANGELINE</td>
-            <td>TEKNIK INFORMATIKA</td>
-          </tr>
-
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">2</th>
-            <td>535200006</td>
-            <td>VENNY CYNTIA</td>
-            <td>TEKNIK INFORMATIKA</td>
-          </tr>
-
-          <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-            <th scope="row">3</th>
-            <td>535200014</td>
-            <td>KENSA ATHALIA</td>
-            <td>TEKNIK INFORMATIKA</td>
-          </tr>
-
-          <tr style="border-bottom:1px solid black;">
-            <th scope="row">4</th>
-            <td>535200019</td>
-            <td>JAMES SUGIARTO EFFENDY</td>
-            <td>TEKNIK INFORMATIKA</td>
-          </tr>
-
-
-
-        </tbody>
-      </table>
-    </form>
-  </div>
 </div>
 
 <%- contentFor('title') %>

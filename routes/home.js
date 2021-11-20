@@ -3,7 +3,7 @@ const router = express.Router()
 const bioUser = require('../models/bioUser')
 const chatadmin = require('../models/chatadmin')
 const matkul = require('../models/matkul')
-
+const krrs = require('../models/krrs')
 
 router.get('/',(req,res) =>{
     //check user session
@@ -102,19 +102,62 @@ router.get('/krrs',(req,res) =>{
         nim:NIM
     });
 })
-
+var hasilKuliah;
 router.get('/krrs-pengisian',async(req,res) =>{
     var Matkul = await matkul.find();
-    var pilMatkul = req.body.pilMatkul;
+    var dataKrrs = await krrs.find({nim:NIM})
+    var pilMatkul = req.query.pilMatkul;
+    hasilKuliah = req.query.pilMatkul;
+    console.log('Hasil:'+hasilKuliah)
+    var pilKelas = req.query.pilKelas;
     var Nama = req.session.user;
     var NIM = req.session.nim;
-    console.log(pilMatkul)
+    var selMatkul = await matkul.find({kode: pilMatkul})
+    console.log('route Pilihan: '+pilMatkul+pilKelas)
     res.render('pages/mahasiswa/krrs-pengisian',{
+        DataKrrs:dataKrrs,
         matkuls:Matkul,
         namaUser:Nama,
         nim:NIM,
+        pilMatkul:pilMatkul,
+        pilKelas:pilKelas,
+        selectMatkul:selMatkul,
+        selectKelas:pilKelas,
+        kelas:pilKelas,
     });
 })
+
+router.post('/simpanKrrs/',async(req,res) =>{
+    var hsMatkul = req.body.pilMatkul;
+    var hsKelas = req.body.piKelas;
+    var NIM = req.session.nim;
+    console.log('pilihan:'+hasilKuliah+' '+hsKelas)
+    const data = await krrs.exists({nim:NIM})
+    if(data){
+        var existKrrs = await krrs.findOneAndUpdate(
+            {nim:NIM},
+            {$push:{matkul:hasilKuliah,kelas:hsKelas}},
+            {new:true})
+        console.log('Data terupdate')
+    }else{
+        myKrrs = new krrs({
+            nim:NIM,
+            matkul:[hasilKuliah],
+            kelas:[hsKelas]
+        })
+        myKrrs.save((error,savedMatkul)=>{
+            if(error){
+                    throw error;
+            } else{
+                console.log('Data Tersimpan');
+            }
+                
+            })
+    }
+    res.redirect('/krrs-pengisian')
+})
+
+
 
 router.get('/krrs-reguler',(req,res) =>{
     var Nama = req.session.user;

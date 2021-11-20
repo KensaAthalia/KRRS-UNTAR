@@ -1,3 +1,41 @@
+<head>
+  <style>
+    .data {
+      margin: 10px;
+      padding: 10px;
+      border: 1pt solid black;
+      border-radius: 10px;
+      float: left;
+    }
+
+    .judul {
+      margin-top: 20px;
+      color: #A01627;
+      text-align: center;
+      font-weight: 900;
+    }
+    .form {
+      border: 1px solid black;
+      height: 200px;
+      width: 800px;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      border-radius: 10px;
+    }
+
+    .form-krrs {
+      border: 1px solid black;
+      height: 550px;
+      width: 99%;
+      margin-left: 10px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  </style>
+</head>
 <ul class="nav nav-tabs">
   <li class="nav-items">
     <a class="nav-link" href="/krrs" style="font-weight: 800; color: black; letter-spacing: 3pt; font-size: 8pt;">TAHAP
@@ -23,13 +61,13 @@
       <table class="krrs" style="margin-left:10px;">
         <tr>
           <td>NIM </td>
-          <td>: 535200014</td>
+          <td>: <%= nim %></td>
           <td>SKS Kumulatif</td>
           <td>: 42</td>
         </tr>
         <tr>
           <td>Nama</td>
-          <td>: Jennie Kim</td>
+          <td>: <%= namaUser %></td>
           <td>IPK </td>
           <td>: 3.79</td>
         </tr>
@@ -49,32 +87,44 @@
     </form>
   </div>
 </div>
-<div class="form" style="height:20%;margin-left: 7px; margin-top: 7px;">
+<div class="form" style="height:22%;margin-left: 7px; margin-top: 7px;">
   <div>
-    <form>
-      <h3 class="p-krrs" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 15px;">
+    
+      <h3 class="p-krrs mx-2" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 15px;">
         Pilih Matakuliah
       </h3>
       <form name="selMatkul" action="/krrs-pengisian" method="get">
         <select name="pilMatkul" style="width:95%; height:60px; border-radius: 5px; color:gray ;margin-left: 10px;">
-          <option value="" disabled selected hidden style="color: gray;"> --- Pilih Matakuliah ---</option>
-          <% matkuls.forEach((matkul) =>{ %>
-          <option value=<%= matkul.kode %>> <%= matkul.matakuliah %></option>
-          <% }) %>
+          <% if (pilMatkul == undefined){ %>
+            <% matkuls.forEach((matkul) =>{ %>
+              <option value=<%= matkul.kode %>> <%= matkul.matakuliah %></option>
+            <% }) %>
+          <% } else { %>
+            <% selectMatkul.forEach((matkul) =>{ %>
+            <option value=<%= matkul.kode %>> <%= matkul.matakuliah %></option>
+            <% }) %>
+          <% } %>
+          
         </select>
-        <input type="submit">
+        <div class="my-2" >
+          <button class="btn btn-danger ml-2" type="submit">Cek Matkul
+        </div>
       </form>
-      <h3 class="p-krrs" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 10px;">
+      <form action="/simpanKrrs" method="post">
+      <h3 class="p-krrs mx-2" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 10px;">
         Pilih Kelas
       </h3>
-      <select name="pilKelas" style="width:95%; height:60px; border-radius: 5px; color:gray ;margin-left: 10px;">
-        <option value="" disabled selected hidden style="color: gray;"> --- Pilih Jadwal dan Kelas ---
-        </option>
-        <% matkuls.forEach((matkul) =>{ %>
-        <option value=<%= matkul.kelas %>><%= matkul.kelas %>'/'<%= matkul.jadwal %></option>
+      <select name="piKelas" style="width:95%; height:60px; border-radius: 5px; color:gray ;margin-left: 10px;">
+        
+        <% var j = 0; %>
+        <% selectMatkul.forEach((mata)=>{ %>
+          <% mata.kelas.forEach((kelas)=>{ %>
+          <option value=<%= kelas %>><%= kelas %>: <%= mata.jadwal[j] %></option>
+        <% j=j+1; %>
         <% }) %>
+        <% }) %> 
       </select>
-      <a href="/krrs-pengisian" id="Simpan" class="btn" style="background-color: #A01627; color: white; width: 150px;height: 50px; 
+      <button type="submit" id="Simpan" class="btn" style="background-color: #A01627; color: white; width: 150px;height: 50px; 
           border-radius: 30px; margin-left: 35%; font-weight: bold;margin-top:2%;font-size: 15pt;">Simpan</a>
     </form>
   </div>
@@ -95,9 +145,12 @@
           <th>Waktu kuliah</th>
           <th>Action</th>
         </tr>
+        <% var k = 0; %>
+        <% DataKrrs.forEach((data) => { %>
+          <% data.kelas.forEach((kelas) => { %>
         <tr style="background-color:CCCCCC;height:50;width:50;border-bottom:1px solid black;">
           <td>TK23015</td>
-          <td>WEB PROGRAMMING</td>
+          <td><%= data.matkul %></td>
           <td><span class="badge badge-pill" style="background-color: A01627;font-size: 12pt;color: white;">8</span>
           </td>
           <td><span class="badge badge-pill" style="background-color: 811EAF;font-size: 12pt;color: white;">A</span>
@@ -121,87 +174,9 @@
                               border-radius: 10px;  font-weight: bold;">Hapus</a>
             </p>
           </td>
-
         </tr>
-        <tr style="border-bottom:1px solid black;">
-          <td>TK23016</td>
-          <td>COMPUTER SYSTEMS</td>
-          <td><span class="badge badge-pill" style="background-color: 163DA0;font-size: 12pt;color: white;">6</span>
-          </td>
-          <td><span class="badge badge-pill" style="background-color: 18838A;font-size: 12pt;color: white;">B</span>
-          </td>
-          <td>
-            <p>Ruang R.803</p>
-            <p>Ruang R.803</p>
-          </td>
-          <td>
-            <p>Selasa, 07:30 s.d 09:10</p>
-            <p>Selasa, 09:30 s.d 11:10</p>
-          </td>
-          <td>
-            <p>
-              <a href="##" class="btn" style="background-color: 29CA43; color: white; width: 100px;height: 30px; 
-                              border-radius: 10px;  font-weight: bold;">Edit</a>
-            </p>
-            <p>
-              <a href="##" class="btn" style="background-color: #A01627; color: white; width: 100px;height: 30px; 
-                              border-radius: 10px;  font-weight: bold;">Hapus</a>
-            </p>
-          </td>
-
-        </tr>
-        <tr style="background-color:CCCCCC;border-bottom:1px solid black;">
-          <td>TK23017</td>
-          <td>INTRODUCTION TO OPERATING SYSTEMS</td>
-          <td><span class="badge badge-pill" style="background-color: 42A016;font-size: 12pt;color: white;">4</span>
-          </td>
-          <td><span class="badge badge-pill" style="background-color: 811EAF;font-size: 12pt;color: white;">A</span>
-          </td>
-          <td>
-            <p>Ruang R.705</p>
-            <p>Ruang R.705</p>
-          </td>
-          <td>
-            <p>Kamis, 07:30 s.d 09:10</p>
-            <p>Kamis, 09:30 s.d 11:10</p>
-          </td>
-          <td>
-            <p>
-              <a href="##" class="btn" style="background-color: 29CA43; color: white; width: 100px;height: 30px; 
-                              border-radius: 10px;  font-weight: bold;">Edit</a>
-            </p>
-            <p>
-              <a href="##" class="btn" style="background-color: #A01627; color: white; width: 100px;height: 30px; 
-                              border-radius: 10px;  font-weight: bold;">Hapus</a>
-            </p>
-          </td>
-        </tr>
-        <tr style="border-bottom:1px solid black;">
-          <td>TK33010</td>
-          <td>DISTRIBUTED SYSTEMS</td>
-          <td><span class="badge badge-pill" style="background-color: 42A016;font-size: 12pt;color: white;">4</span>
-          </td>
-          <td><span class="badge badge-pill" style="background-color: 811EAF;font-size: 12pt;color: white;">A</span>
-          </td>
-          <td>
-            <p>Ruang R.805</p>
-            <p>Ruang R.805</p>
-          </td>
-          <td>
-            <p>Rabu, 07:30 s.d 09:10</p>
-            <p>Rabu, 09:30 s.d 11:10</p>
-          </td>
-          <td>
-            <p>
-              <a href="##" class="btn" style="background-color: 29CA43; color: white; width: 100px;height: 30px; 
-                              border-radius: 10px;  font-weight: bold;">Edit</a>
-            </p>
-            <p>
-              <a href="##" class="btn" style="background-color: #A01627; color: white; width: 100px;height: 30px; 
-                              border-radius: 10px;  font-weight: bold;">Hapus</a>
-            </p>
-          </td>
-        </tr>
+        <% }) %>
+        <% }) %>
         <tr style="font-size: 18pt; font-weight: 500;">
           <td></td>
           <td>Total SKS</td>
@@ -228,6 +203,10 @@
   </ul>
 </div>
 
+<script>
+  var selVal = $('#pilMatkul').val()
+  $('#pilMatkul').val(selVal)
+</script>
 
 <%- contentFor('title') %>
 KRRS Pengisian

@@ -3,10 +3,12 @@ const mongoose = require('mongoose')
 const krrsSchema = mongoose.Schema({
     nim:{
         type: Number,
-        unique: true,
         required: true
     },
     matkul: {
+        type:Array
+    },
+    kelas:{
         type:Array
     },
     createdAt: {

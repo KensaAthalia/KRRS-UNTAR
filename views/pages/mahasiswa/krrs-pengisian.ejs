@@ -14,6 +14,7 @@
       text-align: center;
       font-weight: 900;
     }
+
     .form {
       border: 1px solid black;
       height: 200px;
@@ -89,40 +90,42 @@
 </div>
 <div class="form" style="height:22%;margin-left: 7px; margin-top: 7px;">
   <div>
-    
-      <h3 class="p-krrs mx-2" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 15px;">
-        Pilih Matakuliah
-      </h3>
-      <form name="selMatkul" action="/krrs-pengisian" method="get">
-        <select name="pilMatkul" style="width:95%; height:60px; border-radius: 5px; color:gray ;margin-left: 10px;">
-          <% if (pilMatkul == undefined){ %>
-            <% matkuls.forEach((matkul) =>{ %>
-              <option value=<%= matkul.kode %>> <%= matkul.matakuliah %></option>
-            <% }) %>
-          <% } else { %>
-            <% selectMatkul.forEach((matkul) =>{ %>
-            <option value=<%= matkul.kode %>> <%= matkul.matakuliah %></option>
-            <% }) %>
-          <% } %>
-          
-        </select>
-        <div class="my-2" >
-          <button class="btn btn-danger ml-2" type="submit">Cek Matkul
-        </div>
-      </form>
-      <form action="/simpanKrrs" method="post">
+
+    <h3 class="p-krrs mx-2" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 15px;">
+      Pilih Matakuliah
+    </h3>
+    <form name="selMatkul" action="/krrs-pengisian" method="get">
+      <select name="pilMatkul" style="width:95%; height:60px; border-radius: 5px; color:gray ;margin-left: 10px;">
+        <% if (pilMatkul == undefined){ %>
+        <% matkuls.forEach((matkul) =>{ %>
+        <option value=<%= matkul.kode %>><%= matkul.kode %> - <%= matkul.matakuliah %></option>
+        <% }) %>
+        <% } else { %>
+        <% selectMatkul.forEach((matkul) =>{ %>
+        <option value=<%= matkul.kode %>><%= matkul.kode %> - <%= matkul.matakuliah %></option>
+        <% }) %>
+        <% } %>
+
+      </select>
+      <div class="container-fluid">
+        <button class="btn btn-danger ml-2" type="submit">Cek Matkul</button>
+        <a href="/krrs-pengisian" class="btn btn-danger ml-2">Kembali </a>
+      </div>
+
+    </form>
+    <form action="/simpanKrrs" method="post">
       <h3 class="p-krrs mx-2" style="text-align: Left ;font-size: 13pt; font-weight: 900; margin-top: 10px;">
         Pilih Kelas
       </h3>
       <select name="piKelas" style="width:95%; height:60px; border-radius: 5px; color:gray ;margin-left: 10px;">
-        
+
         <% var j = 0; %>
         <% selectMatkul.forEach((mata)=>{ %>
-          <% mata.kelas.forEach((kelas)=>{ %>
-          <option value=<%= kelas %>><%= kelas %>: <%= mata.jadwal[j] %></option>
+        <% mata.kelas.forEach((kelas)=>{ %>
+        <option value=<%= kelas %>><%= kelas %>: <%= mata.jadwal[j] %></option>
         <% j=j+1; %>
         <% }) %>
-        <% }) %> 
+        <% }) %>
       </select>
       <button type="submit" id="Simpan" class="btn" style="background-color: #A01627; color: white; width: 150px;height: 50px; 
           border-radius: 30px; margin-left: 35%; font-weight: bold;margin-top:2%;font-size: 15pt;">Simpan</a>
@@ -145,24 +148,41 @@
           <th>Waktu kuliah</th>
           <th>Action</th>
         </tr>
-        <% var k = 0; %>
+        <% var k = 0; var numSks = 0 %>
+        <% DataMatkul.forEach((exist) => { %>
         <% DataKrrs.forEach((data) => { %>
-          <% data.kelas.forEach((kelas) => { %>
-        <tr style="background-color:CCCCCC;height:50;width:50;border-bottom:1px solid black;">
-          <td>TK23015</td>
-          <td><%= data.matkul %></td>
-          <td><span class="badge badge-pill" style="background-color: A01627;font-size: 12pt;color: white;">8</span>
+        <% data.kelas.forEach((kelas) => { %>
+        <tr <% if (k % 2 == 1){ %> style="border-bottom:1px solid black;">
+          <% } else { %>
+          style="background-color:CCCCCC;border-bottom:1px solid black;">
+          <% } %>
+          <% numSks = numSks + exist[k].sks %>
+          <% var num = exist[k].sks %>
+          <td><%= data.matkul[k] %></td>
+          <td><%= exist[k].matakuliah %></td>
+          <td><span <% if (num == 4){ %> class="badge badge-success" <% } else if (num == 6){ %>
+              class="badge badge-primary" <% } else { %> class="badge badge-danger" <% } %> style="border-radius: 30px;padding:7px; width: 35px;height:30px;
+            font-size:12pt;color: white;"><%= exist[k].sks %></span>
           </td>
-          <td><span class="badge badge-pill" style="background-color: 811EAF;font-size: 12pt;color: white;">A</span>
+          <td><span class="badge badge-pill"
+              style="background-color: 811EAF;font-size: 12pt;color: white;"><%= kelas %></span>
           </td>
           <td>
-            <p>Ruang Lab Prog. 5</p>
-            <p>Ruang R.703</p>
+            <% exist[k].ruang.forEach((r)=>{ %>
+            <p><%= r %></p>
+            <% }) %>
+
           </td>
           <td>
-            <p>Senin, 07:30 s.d 09:10</p>
-            <p>Senin, 09:30 s.d 11:10</p>
-            <p>Selasa, 07:30 s.d 11:10</p>
+            <% var temp = kelas %>
+            <% if(temp ==='A'){ %>
+            <p><%= exist[k].jadwal[0] %></p>
+            <% } else if (temp ==='B'){ %>
+            <p><%= exist[k].jadwal[1] %></p>
+            <% } else { %>
+            <p><%= exist[k].jadwal[0] %></p>
+            <% } %>
+
           </td>
           <td>
             <p>
@@ -170,17 +190,19 @@
                               border-radius: 10px;  font-weight: bold;">Edit</a>
             </p>
             <p>
-              <a href="##" class="btn" style="background-color: #A01627; color: white; width: 100px;height: 30px; 
+              <a href="/hapusKrrs/<%= data.matkul[k] %>/<%= kelas %>" class="btn" style="background-color: #A01627; color: white; width: 100px;height: 30px; 
                               border-radius: 10px;  font-weight: bold;">Hapus</a>
             </p>
           </td>
         </tr>
+        <% k++ }) %>
         <% }) %>
         <% }) %>
         <tr style="font-size: 18pt; font-weight: 500;">
           <td></td>
           <td>Total SKS</td>
-          <td><span class="badge badge-pill" style="background-color:black;font-size: 15pt;color: white;">22</span></td>
+          <td><span class="badge badge-pill"
+              style="background-color:black;font-size: 15pt;color: white;"><%= numSks %></span></td>
         </tr>
 
       </table>

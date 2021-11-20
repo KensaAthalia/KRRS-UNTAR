@@ -56,23 +56,47 @@ router.post('/profil', async (req,res) => {
         alamatOrtu : req.body.alamatOrtu,
         telpOrtu : req.body.telpOrtu,
     })
+    var isSimpan = false;
     myBio.save((error,savedUser)=>{
-        if(error) throw error
-        console.log('Data Tersimpan');
+        if(error) {console.log(error)}
+        else{isSimpan=true;console.log('Data Tersimpan:'+savedUser);}
     })
-    res.render('pages/mahasiswa/profil',{
-        saved_successfully:'Data Tersimpan',
-        namaUser:Nama,
-        nim:NIM
-    })
+    if (isSimpan) {
+        res.render('pages/mahasiswa/profil',{
+            saved_successfully:'Data Tersimpan',
+            namaUser:Nama,
+            nim:NIM
+        })
+    } else {
+        res.render('pages/mahasiswa/profil',{
+            saved_successfully:'Data tidak Tersimpan',
+            namaUser:Nama,
+            nim:NIM
+        })
+    }
+   
 })
 
-router.get('/cetak',(req,res) =>{
+router.get('/cetak',async(req,res) =>{
     var Nama = req.session.user;
     var NIM = req.session.nim;
+    var dataKrrs = await krrs.find({nim:NIM});
+    var arrMatkul = []
+    dataKrrs.forEach((data)=>{
+        arrMatkul.push(data.matkul)
+    })
+    var dataMatkul = []
+    for (let i = 0; i < arrMatkul.length; i++) {
+        temp = await matkul.find({kode:arrMatkul[i]})
+        dataMatkul.push(temp)
+    }
+    var Matkul = await matkul.find();
     res.render('pages/mahasiswa/cetak',{
+        DataKrrs:dataKrrs,
+        matkuls:Matkul,
         namaUser:Nama,
-        nim:NIM
+        nim:NIM,
+        DataMatkul:dataMatkul
     });
 })
 
@@ -104,16 +128,32 @@ router.get('/krrs',(req,res) =>{
 })
 var hasilKuliah;
 router.get('/krrs-pengisian',async(req,res) =>{
-    var Matkul = await matkul.find();
-    var dataKrrs = await krrs.find({nim:NIM})
-    var pilMatkul = req.query.pilMatkul;
-    hasilKuliah = req.query.pilMatkul;
-    console.log('Hasil:'+hasilKuliah)
     var pilKelas = req.query.pilKelas;
     var Nama = req.session.user;
     var NIM = req.session.nim;
+    var dataKrrs = await krrs.find({nim:NIM});
+    var arrMatkul = []
+    dataKrrs.forEach((data)=>{
+        arrMatkul.push(data.matkul)
+    })
+    console.log(arrMatkul)
+    var dataMatkul = []
+    for (let i = 0; i < arrMatkul.length; i++) {
+        console.log(arrMatkul[i])
+        temp = await matkul.find({kode:arrMatkul[i]})
+        dataMatkul.push(temp)
+        console.log(dataMatkul[i])
+    }
+        
+    
+    console.log('DataKRRS '+dataKrrs)
+    var Matkul = await matkul.find();
+    var pilMatkul = req.query.pilMatkul;
+    hasilKuliah = req.query.pilMatkul;
+    console.log('Hasil:'+hasilKuliah)
+    
     var selMatkul = await matkul.find({kode: pilMatkul})
-    console.log('route Pilihan: '+pilMatkul+pilKelas)
+    console.log('route Pilihan: '+pilMatkul+' '+pilKelas)
     res.render('pages/mahasiswa/krrs-pengisian',{
         DataKrrs:dataKrrs,
         matkuls:Matkul,
@@ -124,6 +164,7 @@ router.get('/krrs-pengisian',async(req,res) =>{
         selectMatkul:selMatkul,
         selectKelas:pilKelas,
         kelas:pilKelas,
+        DataMatkul:dataMatkul
     });
 })
 
@@ -157,14 +198,43 @@ router.post('/simpanKrrs/',async(req,res) =>{
     res.redirect('/krrs-pengisian')
 })
 
+router.get('/hapusKrrs/:Kode/:kelas',async(req,res)=>{
+    const myKode = req.params.Kode
+    const myKelas = req.params.kelas
+    var NIM = req.session.nim;
+    console.log('Kode:'+myKode+' '+myKelas)
+    /*await krrs.findOneAndUpdate(
+        {nim:NIM},
+        {$pop:{matkul:myKode,kelas:myKelas}},
+        {new:true})
+        */
+    res.redirect('/krrs-pengisian')
+})
 
 
-router.get('/krrs-reguler',(req,res) =>{
+router.get('/krrs-reguler',async(req,res) =>{
     var Nama = req.session.user;
     var NIM = req.session.nim;
+    var dataKrrs = await krrs.find({nim:NIM});
+    var arrMatkul = []
+    dataKrrs.forEach((data)=>{
+        arrMatkul.push(data.matkul)
+    })
+    console.log(arrMatkul)
+    var dataMatkul = []
+    for (let i = 0; i < arrMatkul.length; i++) {
+        console.log(arrMatkul[i])
+        temp = await matkul.find({kode:arrMatkul[i]})
+        dataMatkul.push(temp)
+        console.log(dataMatkul[i])
+    }
+    console.log('DataKRRS '+dataKrrs)
+    var Matkul = await matkul.find();
     res.render('pages/mahasiswa/krrs-reguler',{
         namaUser:Nama,
-        nim:NIM
+        nim:NIM,
+        DataKrrs:dataKrrs,
+        DataMatkul:dataMatkul
     });
 })
 

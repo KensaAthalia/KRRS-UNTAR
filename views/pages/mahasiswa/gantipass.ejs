@@ -38,7 +38,7 @@
       </div>
     </div>
     <div>
-      <form method="post" action="/auth/gantipass">
+      <form method="post" action="/passganti">
       <div class="isi-form" style="margin: 20px;">
         <input class="pass" type="password" placeholder="New Password" id="newPass" name="newPass">
         <br><br>
@@ -49,9 +49,9 @@
     </form>
     </div>
   </div>
-  <% if(locals.saved_successfully) { %>
+  <% if(locals.pesan) { %>
     <span class="text-danger pl-2" style="font-size: 2.2vh; margin-left: 5%;">
-      <%= saved_successfully %>
+      <%= pesan %>
     </span>
     <% } %>
   <%- contentFor('title') %>

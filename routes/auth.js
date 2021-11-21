@@ -42,15 +42,19 @@ router.post('/login', async (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const pilihan = req.body.level;
-
+    
     data = await User.find();
     dataMahasiswa = await mahasiswa.find()
 
     await data.forEach((account) => {
         if (username == account.username) {
+            const role = account.role;
+            console.log(role)
             if (password == account.password) {
                 req.session.isLoggedIn = true;
                 req.session.user = account.name;
+                req.session.username = username;
+                
                 dataMahasiswa.forEach((mahasiswa)=>{
                     if(account.name === mahasiswa.nama){
                         req.session.nim = mahasiswa.nim;
@@ -58,10 +62,16 @@ router.post('/login', async (req, res) => {
                 })
                 console.log(req.session.user);
                 console.log(req.session.nim);
-                if (pilihan === 'Mahasiswa') {
+                if (pilihan === 'Mahasiswa' && role ==='mahasiswa') {
                     res.redirect('/home');
-                } else if (pilihan === 'Admin') {
+                } else if (pilihan === 'Admin' && role ==='admin') {
                     res.redirect('/admin/adminHome');
+                }
+                else{
+                    res.render('pages/login', {
+                        layout: false,
+                        error: 'Wrong Email or Password or akses!'
+                    })
                 }
             } else {
                 res.render('pages/login', {
@@ -128,6 +138,7 @@ router.post('/forgot', async (req, res) => {
     }
     
 })
+
 
 
 module.exports = router;

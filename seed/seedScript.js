@@ -18,6 +18,7 @@ const users = [
         name: 'JAMES SUGIARTO EFFENDY',
         email: 'jmseffendy@krs.com',
         password: '123456',
+        role:'mahasiswa'
     }),
     
 ]

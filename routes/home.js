@@ -4,6 +4,7 @@ const bioUser = require('../models/bioUser')
 const chatadmin = require('../models/chatadmin')
 const matkul = require('../models/matkul')
 const krrs = require('../models/krrs')
+const user = require('../models/user')
 
 router.get('/',(req,res) =>{
     //check user session
@@ -136,7 +137,8 @@ router.get('/krrs-pengisian',async(req,res) =>{
     dataKrrs.forEach((data)=>{
         arrMatkul.push(data.matkul)
     })
-    console.log(arrMatkul)
+    arrMatkul.sort()
+    console.log('array:'+arrMatkul)
     var dataMatkul = []
     for (let i = 0; i < arrMatkul.length; i++) {
         console.log(arrMatkul[i])
@@ -144,7 +146,7 @@ router.get('/krrs-pengisian',async(req,res) =>{
         dataMatkul.push(temp)
         console.log(dataMatkul[i])
     }
-        
+    
     
     console.log('DataKRRS '+dataKrrs)
     var Matkul = await matkul.find();
@@ -203,11 +205,11 @@ router.get('/hapusKrrs/:Kode/:kelas',async(req,res)=>{
     const myKelas = req.params.kelas
     var NIM = req.session.nim;
     console.log('Kode:'+myKode+' '+myKelas)
-    /*await krrs.findOneAndUpdate(
+    await krrs.findOneAndUpdate(
         {nim:NIM},
-        {$pop:{matkul:myKode,kelas:myKelas}},
+        {$pop:{matkul:find(element=>element === myKode),kelas:find(elements=>elements === myKelas)}},
         {new:true})
-        */
+        
     res.redirect('/krrs-pengisian')
 })
 
@@ -228,6 +230,8 @@ router.get('/krrs-reguler',async(req,res) =>{
         dataMatkul.push(temp)
         console.log(dataMatkul[i])
     }
+    
+    console.log(dataMatkul)
     console.log('DataKRRS '+dataKrrs)
     var Matkul = await matkul.find();
     res.render('pages/mahasiswa/krrs-reguler',{
@@ -301,13 +305,40 @@ router.get('/lihatjawaban',(req,res) =>{
     });
 })
 
-router.get('/gantipass',(req,res) =>{
+router.get('/gantipass',async(req,res) =>{
     var Nama = req.session.user;
+    const userName = req.session.username;
     var NIM = req.session.nim;
+    const data = await user.find({username:userName})
     res.render('pages/mahasiswa/gantipass',{
         namaUser:Nama,
         nim:NIM
     });
+})
+
+router.post('/passganti',async(req,res)=>{
+    const userName = req.session.username;
+    const Nama = req.session.user
+    var NIM = req.session.nim;
+    const currPass = req.body.currPass;
+    const newPass = req.body.newPass;
+    const conPass = req.body.conPass;
+    const data = await user.find({username:userName})
+    if(data.password === currPass){
+        if(newPass === conPass && newPass!==null){
+            const exist = await user.findOneAndUpdate({username:userName},{password:newPass},{new:true})
+            res.render('pages/mahasiswa/gantipass',{namaUser:Nama,
+            nim:NIM, pesan:'Password terganti'})
+        }
+        else{
+            res.render('pages/mahasiswa/gantipass',{namaUser:Nama,
+                nim:NIM, pesan:'Password tidak sama'})
+        }
+    }
+    else{
+        res.render('pages/mahasiswa/gantipass',{namaUser:Nama,
+            nim:NIM, pesan:'Password tidak sama'})
+    }
 })
 
 module.exports = router;

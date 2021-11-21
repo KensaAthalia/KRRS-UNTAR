@@ -90,12 +90,12 @@ router.post('/cekEmail', async (req, res) => {
     await data.forEach((account) => {
         if (reqEmail === account.email) {
             myEmail.push(reqEmail);
-            res.redirect('/lupapass2')
+            res.redirect('/auth/lupapass2')
             isTrue = true;
         }
     })
     if (!isTrue) {
-        res.redirect('/lupapass')
+        res.redirect('/auth/lupapass')
     }
 })
 
@@ -103,9 +103,9 @@ router.post('/cekKode', async (req, res) => {
     const reqKode = req.body.kode;
     const cekKode = '60357'
     if (reqKode === cekKode) {
-        res.redirect('/lupapass3')
+        res.redirect('/auth/lupapass3')
     } else {
-        res.redirect('/lupapass2')
+        res.redirect('/auth/lupapass2')
     }
 })
 
@@ -129,12 +129,12 @@ router.post('/forgot', async (req, res) => {
         }
     })
     if(!isGanti){
-        res.redirect('/lupapass3')
+        res.redirect('/auth/lupapass3')
     }
     else{
         myEmail.length = 0;
         console.log('email sekarang: '+myEmail[0])
-        res.redirect('/lupapass4')
+        res.redirect('/auth/lupapass4')
     }
     
 })

@@ -14,9 +14,23 @@ mongoose.connect(('mongodb+srv://admin:UNTAR2020@cluster0.nu6km.mongodb.net/KRRS
 
 const users = [
     new User({
-        username: 'jmseffendy',
-        name: 'JAMES SUGIARTO EFFENDY',
-        email: 'jmseffendy@krs.com',
+        username: 'venny',
+        name: 'VENNY CYNTIA',
+        email: 'venny@krs.com',
+        password: '123456',
+        role:'mahasiswa'
+    }),
+    new User({
+        username: 'thia',
+        name: 'DAMEETHIA ANGELINE',
+        email: 'thia@krs.com',
+        password: '123456',
+        role:'mahasiswa'
+    }),
+    new User({
+        username: 'kensa',
+        name: 'KENSA ATHALIA',
+        email: 'kensa@krs.com',
         password: '123456',
         role:'mahasiswa'
     }),

@@ -1,1 +1,69 @@
+<head>
+    <style>
+    .button-simpan {
+      background-color: #7E1724 !important;
+      color: white !important;
+      text-align: center !important;
+      padding-top: 5 !important;
+      border-radius: 100pt;
+    }
 
+    .form-mahasiswabelumterjawab {
+      border: 1px solid black;
+      max-height: 100%;
+      width: 100%;
+      margin-left: 1px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      float: left;
+    }
+
+    .form-group {
+      border: 1px solid black;
+      max-height: 98%;
+      width: 98%;
+      margin-left: 29px;
+      margin-top: 7px;
+      border-color: black;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      float: left;
+    }
+    </style>
+</head>
+
+<ul class="nav nav-tabs" style="font-size: 12pt;">
+    <li class="nav-items">
+      <a class="nav-link active" href="/admin/pertanyaanmahasiswa"
+        style="font-weight: 800; letter-spacing: 3pt; font-size: 8pt; color: black;">PERTANYAAN MAHASISWA</a>
+      <div class="nav-bawah"></div>
+    </li>
+  </ul>
+  <form>
+    <div class="form-mahasiswabelumterjawab" style="margin-top: 4%;">
+      <div
+        style="width:100.1% ; height:15px;background-color:black; border-top-left-radius: 10px;border-top-right-radius: 10px;">
+      </div>
+      <div style="padding-left: 1%;padding-top: 3%;">
+        <h3 style="font-weight: 800; margin-top: -15pt; margin-bottom: 10pt;"><strong>Pertanyaan Anda</strong>
+        </h3>
+        <h4>Selamat pagi Admin, saya ingin bertanya, untuk FTI jam mengisi KRRS nya itu jam berapa yaa, Min?
+          Terima kasih.</h4>
+        <div style="margin-bottom: 20pt;"></div>
+      </div>
+    </div>
+</div>
+<div>
+  <h2 style="font-weight: 800;margin-left: 5%; margin-top: 10%;"><strong>Jawaban Admin :</strong> </h2>
+  <div class="form-group" style="margin-left: 10pt;">
+    <textarea class="form-control" id="isian" rows="8" placeholder="Ketikkan Jawaban disini"></textarea>
+  </div>
+</div>
+<a href="/admin/mahasiswabelumterjawab" id="Simpan" type="button" class="btn btn-primary"
+  style="border-radius: 20pt; width: 100pt;font-size:15pt;margin-top: 25px;background-color: #A01627;margin-left: 40%;">Simpan</a>
+</div>
+
+<%- contentFor('title') %>
+Belum Terjawab
